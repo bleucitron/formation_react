@@ -4,6 +4,9 @@ import ReactDOM from 'react-dom';
 import './reset.css';
 import './index.css';
 
-const pokemon = <div>Pikachu</div>;
+import data from './_data/pokemon.json';
+import App from './classes/App';
 
-ReactDOM.render(pokemon, document.getElementById('root'));
+import './index.scss';
+
+ReactDOM.render(<App data={data} />, document.getElementById('root'));
