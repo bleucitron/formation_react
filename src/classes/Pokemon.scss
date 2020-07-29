@@ -1,0 +1,21 @@
+.Pokemon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: fit-content;
+  padding: 1rem;
+  margin: 1rem;
+  border: 1px solid black;
+
+  .name {
+    font-size: 1.3rem;
+  }
+
+  .types {
+    display: flex;
+
+    .type {
+      margin: 0 0.5rem;
+    }
+  }
+}

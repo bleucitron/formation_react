@@ -22,30 +22,3 @@ code {
     flex-wrap: wrap;
   }
 }
-
-.Pokemon,
-.TrainedPokemon {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: fit-content;
-  padding: 1rem;
-  margin: 1rem;
-  border: 1px solid black;
-
-  .name {
-    font-size: 1.3rem;
-  }
-}
-
-.Trainer {
-  display: flex;
-  align-items: baseline;
-  background: lightblue;
-
-  .name {
-    margin: 1rem;
-    color: unset;
-    font-size: 1.5rem;
-  }
-}

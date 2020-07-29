@@ -1,0 +1,11 @@
+.Trainer {
+  display: flex;
+  align-items: baseline;
+  background: lightblue;
+
+  .name {
+    margin: 1rem;
+    color: unset;
+    font-size: 1.5rem;
+  }
+}
