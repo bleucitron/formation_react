@@ -21,4 +21,8 @@ code {
     display: flex;
     flex-wrap: wrap;
   }
+
+  .active {
+    background: red;
+  }
 }
