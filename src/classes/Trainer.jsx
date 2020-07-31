@@ -1,18 +1,20 @@
 import React from 'react';
 
-import TrainedPokemon from './TrainedPokemon';
+import TrainedPokemon from '../classes/TrainedPokemon_hook';
 
 import './Trainer.scss';
 
 function Trainer(props) {
-  const { name, address, pokemons } = props;
+  const { name, address, pokemons, remove } = props;
 
   const trainedPokemons = pokemons.map(pokemon => (
     <TrainedPokemon
+      trainedId={pokemon.trainedId}
       name={pokemon.name}
       weight={pokemon.weight}
       src={pokemon.sprites.front_default}
-      key={pokemon.id}
+      remove={remove}
+      key={pokemon.trainedId}
     />
   ));
 

@@ -19,11 +19,9 @@ class TrainedPokemon extends Component {
   }
 
   gainExp() {
-    const { exp } = this.state;
-
-    this.setState({
+    this.setState(exp => ({
       exp: exp + 1,
-    });
+    }));
   }
 
   render() {

@@ -35,11 +35,9 @@ class App extends React.Component {
   }
 
   toggle() {
-    const { isElectric } = this.state;
-
-    this.setState({
-      isElectric: !isElectric,
-    });
+    this.setState(state => ({
+      isElectric: !state.isElectric,
+    }));
   }
 
   updateValue(event) {

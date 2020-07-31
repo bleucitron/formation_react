@@ -1,15 +1,19 @@
 import React from 'react';
 
 function Filters(props) {
-  const { isActive, toggle } = props;
+  const { types, selected, toggle } = props;
 
-  const classes = isActive ? 'active' : '';
-
-  return (
-    <button className={classes} onClick={toggle}>
-      Filtrer
+  const buttons = types.map(type => (
+    <button
+      className={selected === type ? 'active' : ''}
+      onClick={() => toggle(type)}
+      key={type}
+    >
+      {type}
     </button>
-  );
+  ));
+
+  return <div className='Filters'>{buttons}</div>;
 }
 
 export default Filters;
