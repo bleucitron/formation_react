@@ -50,4 +50,4 @@ Mettre en place les comportements suivants:
 
 4. > Donner l'expérience à un `<TrainedPokemon>` lorsque l'on passe la souris dessus
 
-## À suivre: [Autres hooks](./3_autres_hooks.md)
+## À suivre: [Écosystème React](../4_ecosystem/index.md)
