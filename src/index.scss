@@ -16,11 +16,21 @@ code {
   color: red;
 }
 
+.Count {
+  margin: 1rem;
+  font-size: 3rem;
+}
+
 .App {
   .list {
     display: flex;
     flex-wrap: wrap;
   }
+}
+
+.PokemonList {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .Pokemon,
