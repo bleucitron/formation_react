@@ -111,7 +111,7 @@ class MonComposant extends React.Component {
 3. > Créer un composant `App` dans un fichier `App.jsx`. Ce composant devient la racine de notre application.
 
 - `App` affiche tous les `<Pokemon>` dans un `<ul>`, ainsi que le `<Trainer>`
-- C'est lui que `React.render` utilise
+- C'est lui que `ReactDOM.render` utilise
 
 4. > Modifier `App` pour qu'il accepte `data` en `props`. Il doit la recevoir de `index.jsx`
 

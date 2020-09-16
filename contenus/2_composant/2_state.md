@@ -182,7 +182,8 @@ Le parent fournit alors une fonction en tant que `props`, que l'enfant pourra ex
 ```jsx
 class Parent extends React.Component {
   enerver() {
-    this.setState({ enervement: 0 });
+    const { enervement } = this.state;
+    this.setState({ enervement: enervement + 1000 });
   }
 
   render() {
@@ -223,7 +224,7 @@ Si un `state` a besoin d'être fourni à des composants qui ne font pas partie d
 
 ## Exercices
 
-1. > Faire une méthode personnalisée de la fonction `displayName` de `Pokemon`
+1. > Faire une méthode de classe de la fonction `displayName` de `Pokemon`
 
 2. > Ajouter un `state` au composant `TrainedPokemon`, qui représente son expérience
 
@@ -235,7 +236,7 @@ Si un `state` a besoin d'être fourni à des composants qui ne font pas partie d
 
 - Bien réfléchir à l'endroit où doit être défini le `state` correspondant
 - On doit pouvoir réafficher tous les `<Pokemon>` en recliquant dessus
-- Utiliser `pokemon.types.includes()` pour vérifier si un Pokémon possède un type
+- Utiliser `pokemon.types.find()` pour vérifier si un Pokémon possède un type
 
 6. > Styliser le `<button>` en fonction de si le filtre est actif ou non
 
