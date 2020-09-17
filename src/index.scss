@@ -29,8 +29,15 @@ code {
 }
 
 .PokemonList {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 9rem);
+  grid-gap: 1rem;
+  justify-items: stretch;
+  margin: 1rem;
+}
+
+.error {
+  color: red;
 }
 
 .Pokemon,
@@ -38,13 +45,23 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: fit-content;
   padding: 1rem;
-  margin: 1rem;
   border: 1px solid black;
 
   .name {
     font-size: 1.3rem;
+  }
+}
+
+.active {
+  background: black;
+  color: white;
+}
+
+.TrainedPokemon {
+  .exp {
+    font-size: 1.3rem;
+    font-weight: bold;
   }
 }
 

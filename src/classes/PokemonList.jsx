@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import Pokemon from './Pokemon';
 
-class PokemonList extends Component {
-  render() {
-    const { pokemons } = this.props;
+function PokemonList({ pokemons }) {
+  const instances = pokemons.map(pokemon => (
+    <Pokemon {...pokemon} key={pokemon.id} />
+  ));
 
-    const instances = pokemons.map(pokemon => (
-      <Pokemon {...pokemon} key={pokemon.id} />
-    ));
-
-    return <ul className='PokemonList'>{instances}</ul>;
-  }
+  return <ul className='PokemonList'>{instances}</ul>;
 }
 
 export default PokemonList;
