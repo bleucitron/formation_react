@@ -40,6 +40,12 @@ code {
   color: red;
 }
 
+.Pokemon {
+  &.caught {
+    background-color: green;
+  }
+}
+
 .Pokemon,
 .TrainedPokemon {
   display: flex;
@@ -69,6 +75,10 @@ code {
   display: flex;
   align-items: baseline;
   background: lightblue;
+
+  .list {
+    display: flex;
+  }
 
   .name {
     margin: 1rem;

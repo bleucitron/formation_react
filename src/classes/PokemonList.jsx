@@ -2,9 +2,14 @@ import React from 'react';
 
 import Pokemon from './Pokemon';
 
-function PokemonList({ pokemons }) {
+function PokemonList({ pokemons, ids, catchPokemon }) {
   const instances = pokemons.map(pokemon => (
-    <Pokemon {...pokemon} key={pokemon.id} />
+    <Pokemon
+      {...pokemon}
+      catchMe={() => catchPokemon(pokemon)}
+      isCaught={ids.includes(pokemon.id)}
+      key={pokemon.id}
+    />
   ));
 
   return <ul className='PokemonList'>{instances}</ul>;
