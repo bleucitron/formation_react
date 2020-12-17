@@ -9,9 +9,9 @@ class Pokemon extends Component {
     }
 
     return (
-      <li className='Pokemon' onClick={displayName}>
-        <div className='name'>{name}</div>
-        <div className='weight'>{weight}</div>
+      <li className="Pokemon" onClick={displayName}>
+        <div className="name">{name}</div>
+        <div className="weight">{weight} kg</div>
         {src && <img src={src} alt={name} />}
       </li>
     );
