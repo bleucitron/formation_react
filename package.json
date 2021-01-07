@@ -6,10 +6,9 @@
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
     "@testing-library/user-event": "^7.1.2",
-    "pokedex-promise-v2": "^3.2.0",
+    "pokedex-promise-v2": "^3.3.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.1",
     "reset-css": "^5.0.1",
     "websocket-extensions": "^0.1.4"
   },
@@ -35,6 +34,7 @@
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.14.1"
+    "node-sass": "^4.14.1",
+    "react-scripts": "^4.0.1"
   }
 }
