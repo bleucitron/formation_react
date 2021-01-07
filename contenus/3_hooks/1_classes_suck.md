@@ -6,7 +6,7 @@ Assez vite, React a introduit les composants fonctionnels dans le cas, majoritai
 
 Mais les composants stateful ou nécessitant un cycle de vie particulier demeuraient un problème.
 
-Trois problèmes principaux ont été identifiés:
+[Trois problèmes principaux](https://youtu.be/dpw9EHDh2bM?t=412) ont été identifiés:
 
 - le "Wrapper Hell"
 - les "Huge Components"
