@@ -5,7 +5,7 @@
 Dans de très nombreux cas, les composants sont stateless et n'utilisent pas de méthodes de cycle de vie autres que `render()`.
 
 ```jsx
-class UnComposantClassique extends React.Component() {
+class UnComposantClassique extends React.Component {
   render() {
     return <div>{this.props.name}</div>;
   }
@@ -35,7 +35,7 @@ On dit que `setState()` est asynchrone.
 Cette nuance est importante dans les cas où on demande une mise à jour d'un `state` en fonction de la valeur précédente de `state`. En effet, puisque les mises à jour sont asynchrones, il est possible que la valeur précédente du state ne soit pas celle que l'on croit, dans des cas de mises à jour fréquentes.
 
 ```js
-setState({
+this.setState({
   age: this.state.age + 1, // on peut avoir des surprises
 });
 ```
@@ -50,7 +50,7 @@ Cette fonction sera appelée par React au moment de la mise à jour effective du
 Si plusieurs mises à jour sont fonctionnelles, elles seront bien sûr effectuées dans le bon ordre.
 
 ```js
-setState(state => ({ age: state.age + 1 })); // state est le state juste précédent, ce qui garantit la bonne valeur de age
+this.setState(state => ({ age: state.age + 1 })); // state est le state juste précédent, ce qui garantit la bonne valeur de age
 ```
 
 ## Optimisations
@@ -83,8 +83,8 @@ Au lieu d'utiliser `extends React.Component`, **on peut utiliser `extends React.
 Dans ce cas, on dit que `shouldComponentUpdate()` effectue une comparaison de surface, car elle ne va pas vérifier les éventuelles valeurs plus profondes de `props` ou de `state`.
 
 ```js
-class MonComposant extends React.PureComponent
-  render(){}
+class MonComposant extends React.PureComponent {
+  render() {}
 }
 ```
 
@@ -104,23 +104,24 @@ const MyOptimizedComponent = React.memo(MyComponent);
 
 Les formulaires sont un cas à part car ils possèdent un `state` interne naturel, indépendant de React et maintenu par le DOM lui-même.
 
-### [Formulaires non controllés](https://fr.reactjs.org/docs/uncontrolled-components.html)
+### [Formulaires non controlés](https://fr.reactjs.org/docs/uncontroled-components.html)
 
-Il est tout à fait possible de travailler avec des formulaires en React en laissant le DOM gérer comme d'habitude l'état de chacun des différents inputs. On appelle ça des formulaires _non controllés_.
+Il est tout à fait possible de travailler avec des formulaires en React en laissant le DOM gérer comme d'habitude l'état de chacun des différents inputs. On appelle ça des formulaires _non controlés_.
 
 Mais de manière générale, en React, il est recommandé de pas venir lire ou changer le DOM directement. On préfère laisser le DOM virtuel s'en charger.
 
-### [Formulaires controllés](https://fr.reactjs.org/docs/forms.html)
+### [Formulaires controlés](https://fr.reactjs.org/docs/forms.html)
 
-Dans le cas des formulaires, on appelle ça utiliser des formulaires _controllés_. **L'état interne d'un input va être en permanence contrôllé par le `state` d'un composant**. Cela permet d'avoir accès facilement et en permanence aux valeurs des inputs, sans requêter le DOM, et facilite notamment la validation de formulaire.
+Dans le cas des formulaires, on appelle ça utiliser des formulaires _controlés_. **L'état interne d'un input va être en permanence contrôllé par le `state` d'un composant**. Cela permet d'avoir accès facilement et en permanence aux valeurs des inputs, sans requêter le DOM, et facilite notamment la validation de formulaire.
 
 À chaque mise à jour interne de l'input (en général `onChange`), on va mettre à jour le `state` du composant, pour redescendre sa valeur en tant que `value` de l'input.
 
 ```js
-class MonInput extends React.PureComponent
+class MonInput extends React.PureComponent {
   constructor() {
+    super();
     this.state = {
-      value: ''
+      value: '',
     };
 
     this.updateValue = this.updateValue.bind(this);
@@ -128,12 +129,12 @@ class MonInput extends React.PureComponent
 
   updateValue(e) {
     this.setState({
-      value: e.target.value
-    })
+      value: e.target.value,
+    });
   }
 
-  render(){
-    return <input value={this.state.value} onChange={this.updateValue}/>
+  render() {
+    return <input value={this.state.value} onChange={this.updateValue} />;
   }
 }
 ```
@@ -165,7 +166,7 @@ _Des librairies de gestion d'état comme Redux permettent de résoudre ce probl�
 - Les composants simples peuvent s'écrire sous forme de fonction
 - Les mises à jour de `state` sont effectuées par paquet
 - Si une mise à jour dépend d'un `state` précédent, il est recommandé d'utiliser la méthode fonctionnelle
-- Les formulaires en React sont en général controllés, c'est-à-dire que le comportement est entièrement dicté par React
+- Les formulaires en React sont en général controlés, c'est-à-dire que le comportement est entièrement dicté par React
 - On peut utiliser des `refs` pour manipuler le DOM directement, mais il faut plutôt éviter
 - On peut utiliser le Contexte pour définir des données globales, mais il faut plutôt éviter
 

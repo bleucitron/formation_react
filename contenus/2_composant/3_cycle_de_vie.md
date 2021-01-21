@@ -61,7 +61,7 @@ Permet d'anticiper le démontage d'une instance.
 
 Elle n'est exécutée qu'une seule fois par instance, juste avant qu'elle soit décrochée du DOM.
 
-On s'en sert généralement pour se désabonner aus souscriptions faites au `componentDidMount()`, ou pour arrêter d'éventuels `interval`s.
+On s'en sert généralement pour se désabonner aux souscriptions faites au `componentDidMount()`, ou pour arrêter d'éventuels `interval`s.
 
 ## Exercices
 
