@@ -49,3 +49,24 @@ code {
     font-size: 1.5rem;
   }
 }
+
+.PokemonList {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Filters {
+  display: flex;
+
+  .filter {
+    margin: 0 0.5rem;
+
+    &.active {
+      font-weight: bold;
+    }
+  }
+}
+
+.trained {
+  display: flex;
+}
