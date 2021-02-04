@@ -1,5 +1,5 @@
 import React from 'react';
-import TrainedPokemon from './TrainedPokemon';
+import TrainedPokemon from '../classes/TrainedPokemon';
 
 function Trainer({ name, address, caught }) {
   const trainedPokemons = caught.map(pokemon => (
