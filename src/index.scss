@@ -21,6 +21,11 @@ code {
     display: flex;
     flex-wrap: wrap;
   }
+
+  .age {
+    font-size: 3rem;
+    text-align: center;
+  }
 }
 
 .Pokemon,
@@ -48,4 +53,9 @@ code {
     color: unset;
     font-size: 1.5rem;
   }
+}
+
+.active {
+  background: black;
+  color: white
 }
