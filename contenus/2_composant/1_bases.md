@@ -40,7 +40,7 @@ Jusque là, on a parlé de "données", d'"attributs". En réalité, on parle de 
 En JSX, lorsque l'on passe des "attributs" à une instance de composant, on lui passe en réalité des props. On ne parle jamais d'attributs en React. J'ai utilisé le terme jusque là pour aider à la compréhension de la syntaxe JSX.
 
 ```jsx
-<Pokemon name='Pikachu' weight={40} /> // name et weight sont fournis en props
+<Pokemon name="Pikachu" weight={40} /> // name et weight sont fournis en props
 ```
 
 À l'intérieur d'un composant, **on peut toujours accéder aux props via `this.props`**. `this` représente l'instance du composant.
@@ -80,9 +80,9 @@ On utilise alors une `props` spéciale: `key`. Dans l'idéal, pour une même ins
 class MonComposant extends React.Component {
   render() {
     const pals = [
-      <div key='romain'>Romain</div>,
-      <div key='elie'>Élie</div>
-      <div key='maggie'>Maggie</div>
+      <div key="romain">Romain</div>,
+      <div key="elie">Élie</div>,
+      <div key="maggie">Maggie</div>,
     ];
 
     return <div>{pals}</div>;
