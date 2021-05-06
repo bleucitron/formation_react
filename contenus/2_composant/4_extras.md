@@ -1,6 +1,6 @@
 # Extras
 
-## Composants stateless functionnels
+## Composants stateless fonctionnels
 
 Dans de très nombreux cas, les composants sont stateless et n'utilisent pas de méthodes de cycle de vie autres que `render()`.
 
@@ -104,7 +104,7 @@ const MyOptimizedComponent = React.memo(MyComponent);
 
 Les formulaires sont un cas à part car ils possèdent un `state` interne naturel, indépendant de React et maintenu par le DOM lui-même.
 
-### [Formulaires non controlés](https://fr.reactjs.org/docs/uncontroled-components.html)
+### [Formulaires non controlés](https://fr.reactjs.org/docs/uncontrolled-components.html)
 
 Il est tout à fait possible de travailler avec des formulaires en React en laissant le DOM gérer comme d'habitude l'état de chacun des différents inputs. On appelle ça des formulaires _non controlés_.
 
@@ -174,6 +174,7 @@ _Des librairies de gestion d'état comme Redux permettent de résoudre ce probl�
 
 1. > Utiliser des composants fonctionnels lorsque c'est possible et pertinent
 2. > Utiliser des `setState()` fonctionnels lorsque c'est possible et pertinent
-3. > Utiliser un `input` pour donner un surnom modifiable à chaque `<TrainedPokemon>`
+3. > Utiliser des optimisations lorsque c'est possible et pertinent
+4. > Utiliser un `input` pour donner un surnom modifiable à chaque `<TrainedPokemon>`
 
 ## À suivre: [Les Hooks](../3_hooks/1_classes_suck.md)

@@ -2,7 +2,7 @@ import Pokedex from 'pokedex-promise-v2';
 
 const pokedex = new Pokedex();
 
-export default function () {
+export default function fetchPokemons() {
   return Promise.all(
     [...Array(151).keys()]
       .map(x => x + 1)
