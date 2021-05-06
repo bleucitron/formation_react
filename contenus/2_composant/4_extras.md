@@ -141,6 +141,8 @@ class MonInput extends React.PureComponent {
 
 Ce schéma peut paraître curieux ou inhabituel, mais il est recommandé quand on utilise des formulaire en React.
 
+Plus d'informations sur [les différences entre formulaires contrôlés et non contrôlés](https://goshakkk.name/controlled-vs-uncontrolled-inputs-react/).
+
 ## [Refs](https://fr.reactjs.org/docs/refs-and-the-dom.html)
 
 De manière générale, il est dangereux ou contre-productif de chercher à manipuler le DOM directement dans une application React. Ça implique souvent de "tordre" les principes de React, et peut mener à des comportements imprévus.
