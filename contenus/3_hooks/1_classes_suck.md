@@ -53,7 +53,7 @@ Il également important de comprendre que **les composants classes et fonctionne
 
 ## Exercices
 
-1. > Créer un dossier `hooks` au même endroit que `pokedex`
+1. > Créer un dossier `hooks` au même endroit que `classes`
 
 À partir de maintenant, on va travailler exclusivement dans `hooks`.
 
