@@ -2,7 +2,7 @@ import Pokedex from 'pokedex-promise-v2';
 
 const pokedex = new Pokedex();
 
-export default function () {
+export function fetchPokemons() {
   return Promise.all(
     [...Array(151).keys()]
       .map(x => x + 1)
@@ -14,4 +14,17 @@ export default function () {
         return data;
       }),
   );
+}
+
+export function fetchEvolutionChain(name) {}
+
+export function fetchSpecies(name) {
+  return pokedex
+    .getPokemonSpeciesByName(name)
+    .then(function (response) {
+      console.log('SPECIES', response);
+    })
+    .catch(function (error) {
+      console.log('There was an ERROR: ', error);
+    });
 }
