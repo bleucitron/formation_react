@@ -1,30 +1,46 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import PokemonList from '../functions/PokemonList';
 import Trainer from '../functions/Trainer';
-import Filter from '../functions/Filter';
-import { fetchPokemons, fetchSpecies } from '../utils/api';
-
-fetchSpecies('bulbasaur');
+import Filters from '../functions/Filters';
+import { fetchPokemons } from '../utils/api';
 
 function App() {
-  const [isElec, setIsElec] = useState(false);
+  const [selectedType, setSelectedType] = useState();
   const [data, setData] = useState();
+  const [pokemonsInBag, setPokemonsInBag] = useState([]);
 
   useEffect(() => {
     fetchPokemons().then(setData);
   }, []);
 
-  function filter() {
-    setIsElec(isElec => !isElec);
+  function select(type) {
+    setSelectedType(selectedType === type ? undefined : type);
   }
+
+  function addPokemon(pokemon) {
+    const p = { ...pokemon, idInBag: Date.now() };
+
+    setPokemonsInBag([...pokemonsInBag, p]);
+  }
+  function removePokemon(idInBag) {
+    setPokemonsInBag(pokemonsInBag.filter(p => p.idInBag !== idInBag));
+  }
+
+  const types = useMemo(() => {
+    const set = new Set(
+      data?.map(pokemon => pokemon.types.map(t => t.type.name)).flat(),
+    );
+
+    return [...set];
+  }, [data]);
 
   let content;
   if (!data) content = <div className="loader">Chargement</div>;
   else {
-    const displayed = isElec
+    const displayed = selectedType
       ? data.filter(pokemon =>
-          pokemon.types.find(t => t.type.name === 'electric'),
+          pokemon.types.find(t => t.type.name === selectedType),
         )
       : data;
 
@@ -33,10 +49,11 @@ function App() {
         <Trainer
           name="Romain"
           address="1 rue des pokemons"
-          pokemons={[data[0], data[1]]}
+          pokemons={pokemonsInBag}
+          release={removePokemon}
         />
-        <Filter filter={filter} active={isElec} />
-        <PokemonList pokemons={displayed} />
+        <Filters filter={select} activeLabel={selectedType} labels={types} />
+        <PokemonList pokemons={displayed} addPokemon={addPokemon} />
       </>
     );
   }

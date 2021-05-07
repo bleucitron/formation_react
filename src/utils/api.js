@@ -15,16 +15,3 @@ export function fetchPokemons() {
       }),
   );
 }
-
-export function fetchEvolutionChain(name) {}
-
-export function fetchSpecies(name) {
-  return pokedex
-    .getPokemonSpeciesByName(name)
-    .then(function (response) {
-      console.log('SPECIES', response);
-    })
-    .catch(function (error) {
-      console.log('There was an ERROR: ', error);
-    });
-}

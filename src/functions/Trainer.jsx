@@ -1,13 +1,14 @@
 import React from 'react';
 import TrainedPokemon from '../functions/TrainedPokemon';
 
-function Trainer({ name, address, pokemons }) {
+function Trainer({ name, address, pokemons, release }) {
   const list = pokemons.map(p => (
     <TrainedPokemon
       name={p.name}
       weight={p.weight}
       src={p.sprites.front_default}
-      key={p.id}
+      select={() => release(p.idInBag)}
+      key={p.idInBag}
     />
   ));
 
