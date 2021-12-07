@@ -1,7 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import './index.scss';
+import './reset.css';
+import './index.css';
 
 const pokemon = <div>Pikachu</div>;
 
