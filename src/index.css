@@ -1,4 +1,4 @@
-@import '../node_modules/reset-css/reset.css';
+/* @import '../node_modules/reset-css/reset.css'; */
 
 body {
   margin: 0;
@@ -16,11 +16,11 @@ code {
   color: red;
 }
 
-.App {
-  .list {
-    display: flex;
-    flex-wrap: wrap;
-  }
+.App {}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .Pokemon,
@@ -32,10 +32,10 @@ code {
   padding: 1rem;
   margin: 1rem;
   border: 1px solid black;
+}
 
-  .name {
-    font-size: 1.3rem;
-  }
+.TrainedPokemon .name, .Pokemon .name {
+  font-size: 1.3rem;
 }
 
 .Trainer {
@@ -43,9 +43,11 @@ code {
   align-items: baseline;
   background: lightblue;
 
-  .name {
-    margin: 1rem;
-    color: unset;
-    font-size: 1.5rem;
-  }
+
+}
+
+.Trainer .name {
+  margin: 1rem;
+  color: unset;
+  font-size: 1.5rem;
 }
