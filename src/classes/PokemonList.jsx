@@ -7,15 +7,10 @@ class PokemonList extends React.Component {
     const { pokemons } = this.props;
 
     const instances = pokemons.map(pokemon => (
-      <Pokemon
-        key={pokemon.id}
-        name={pokemon.name}
-        weight={pokemon.weight}
-        src={pokemon.sprites.front_default}
-      />
+      <Pokemon key={pokemon.id} {...pokemon} />
     ));
 
-    return <ul>{instances}</ul>;
+    return <ul className="list">{instances}</ul>;
   }
 }
 

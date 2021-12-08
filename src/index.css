@@ -12,11 +12,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
 
+.loader {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  font-size: 1.5rem;
+}
+
 .name {
   color: red;
 }
 
-.App {}
+.active {
+  background: darkorange;
+  color: white;
+}
 
 .list {
   display: flex;
@@ -25,6 +39,7 @@ code {
 
 .Pokemon,
 .TrainedPokemon {
+  flex: 0 0 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
