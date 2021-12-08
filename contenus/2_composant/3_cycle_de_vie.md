@@ -71,4 +71,9 @@ On s'en sert généralement pour se désabonner aux souscriptions faites au `com
 - le composant racine n'a plus besoin de la `props` `data`
 - la donnée des Pokémons se trouve maintenant dans le `state`
 
+2. > Modifier `TrainedPokemon` pour que l'experience soit incrémentée toutes les secondes
+
+- utiliser `setInterval`
+- penser à gérer le cas où le `TrainedPokemon` serait démonté
+
 ## à suivre: [`Extras`](./4_extras.md)
