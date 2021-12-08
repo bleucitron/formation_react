@@ -14,8 +14,7 @@ code {
   color: red;
 }
 
-.App {
-}
+.App {}
 
 .list {
   display: flex;
@@ -24,6 +23,7 @@ code {
 
 .Pokemon,
 .TrainedPokemon {
+  flex: 0 0 7rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,7 +31,6 @@ code {
   padding: 1rem;
   margin: 1rem;
   border: 1px solid black;
-
 }
 
 .Pokemon .name, .TrainedPokemon .name {
