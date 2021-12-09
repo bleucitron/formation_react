@@ -13,7 +13,6 @@ class App extends React.Component {
     this.state = {
       isElectric: false,
       data: null,
-      nb: 0,
     };
 
     this.filter = this.filter.bind(this);
@@ -46,19 +45,13 @@ class App extends React.Component {
     const myPokemons = [data[0]];
 
     const pokemonsToDisplay = isElectric
-      ? data.filter(pokemon => {
-          // const typeNames = pokemon.types.map(t => t.type.name);
-          // return typeNames.includes('electric');
-
-          return pokemon.types.find(t => t.type.name === 'electric');
-        })
+      ? data.filter(pokemon =>
+          pokemon.types.find(t => t.type.name === 'electric'),
+        )
       : data;
 
     return (
       <div className="App">
-        <button onClick={() => this.setState({ nb: this.state.nb + 1 })}>
-          {this.state.nb}
-        </button>
         <Trainer
           name="Romain"
           address="1 rue des Pokemons"

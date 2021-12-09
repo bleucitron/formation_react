@@ -1,15 +1,16 @@
 import React from 'react';
 
-import TrainedPokemon from '../classes/TrainedPokemon';
+import TrainedPokemon from '../functions/TrainedPokemon';
 
 function Trainer(props) {
-  const { name, address, myPokemons } = props;
+  const { name, address, bag, removePokemon } = props;
 
-  const instances = myPokemons.map(pokemon => (
+  const instances = bag.map(pokemon => (
     <TrainedPokemon
-      key={pokemon.id}
+      key={pokemon.uniqueId}
       name={pokemon.name}
       weight={pokemon.weight}
+      remove={() => removePokemon(pokemon.uniqueId)}
       src={pokemon.sprites.front_default}
     />
   ));
@@ -18,7 +19,7 @@ function Trainer(props) {
     <div className="Trainer">
       <div className="name">{name}</div>
       <div className="address">{address}</div>
-      <ul className="pokemons">{instances}</ul>
+      <ul className="pokemons list">{instances}</ul>
     </div>
   );
 }

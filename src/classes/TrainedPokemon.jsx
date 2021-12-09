@@ -7,13 +7,19 @@ class TrainedPokemon extends React.Component {
     this.state = {
       exp: 0,
       interval: null,
+      nickname: 'BOullda',
     };
 
     this.gainExp = this.gainExp.bind(this);
+    this.changeNickname = this.changeNickname.bind(this);
   }
 
   gainExp() {
     this.setState(state => ({ exp: state.exp + 1 }));
+  }
+
+  changeNickname(e) {
+    this.setState({ nickname: e.target.value });
   }
 
   componentDidMount() {
@@ -42,6 +48,8 @@ class TrainedPokemon extends React.Component {
         <div className="weight">{weight}</div>
         <div className="experience">{exp}</div>
         {src && <img src={src} alt={name} />}
+        <input value={this.state.nickname} onChange={this.changeNickname} />
+        <div>{this.state.nickname}</div>
       </li>
     );
   }

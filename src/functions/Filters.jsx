@@ -1,15 +1,19 @@
 import React from 'react';
 
 function Filters(props) {
-  const { active, filter } = props;
+  const { labels, active, filter } = props;
 
-  console.log('RENDER FILTERS');
-
-  return (
-    <button className={active ? 'active' : ''} onClick={filter}>
-      Électrique
+  const buttons = labels.map(label => (
+    <button
+      key={label}
+      className={label === active ? 'active' : ''}
+      onClick={() => filter(label)}
+    >
+      {label}
     </button>
-  );
+  ));
+
+  return buttons;
 }
 
 export default React.memo(Filters);

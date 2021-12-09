@@ -3,15 +3,10 @@ import React from 'react';
 import Pokemon from './Pokemon';
 
 function PokemonList(props) {
-  const { pokemons } = props;
+  const { pokemons, addPokemon } = props;
 
   const instances = pokemons.map(pokemon => (
-    <Pokemon
-      key={pokemon.id}
-      name={pokemon.name}
-      weight={pokemon.weight}
-      src={pokemon.sprites.front_default}
-    />
+    <Pokemon key={pokemon.id} {...pokemon} add={() => addPokemon(pokemon.id)} />
   ));
 
   return <ul className="list">{instances}</ul>;
