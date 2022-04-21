@@ -8,6 +8,14 @@ class App extends Component {
 
     const bag = [data[0]];
 
+    console.log('DATA', data);
+
+    const deepTypes = data.map(p => p.types.map(t => t.type.name));
+    const flatTypes = deepTypes.flat();
+    const uniqueTypes = [...new Set(flatTypes)];
+
+    console.log('Types', uniqueTypes);
+
     return (
       <div className="App">
         <Trainer name="Roin" address="1 rue des pokemons" bag={bag} />
