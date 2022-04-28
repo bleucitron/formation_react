@@ -33,6 +33,11 @@ code {
   border: 1px solid black;
 }
 
+.active {
+  background: black;
+  color: white;
+}
+
 .Pokemon .name, .TrainedPokemon .name {
   font-size: 1.3rem;
 }

@@ -4,8 +4,28 @@ class Pokemon extends Component {
   constructor() {
     super();
 
+    this.state = {
+      idInterval: null,
+    };
     this.displayName = this.displayName.bind(this);
   }
+
+  // componentDidMount() {
+  //   if (this.props.id === 1) {
+  //     const idInterval = setInterval(() => {
+  //       console.log('COUCOU', this.props.name);
+  //     }, 1000);
+
+  //     this.setState({
+  //       idInterval,
+  //     });
+  //   }
+  // }
+
+  // componentWillUnmount() {
+  //   clearInterval(this.state.idInterval);
+  //   this.setState({ idInterval: null });
+  // }
 
   displayName() {
     console.log('Je suis', this.props.name);

@@ -9,7 +9,7 @@ class PokemonList extends Component {
       return <Pokemon key={item.id} {...item} />;
     });
 
-    return <ul className="PokemonList">{instances}</ul>;
+    return <ul className="PokemonList list">{instances}</ul>;
   }
 }
 
