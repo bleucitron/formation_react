@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class Filters extends Component {
+class Filters extends PureComponent {
   render() {
     const { types, filter, active } = this.props;
 

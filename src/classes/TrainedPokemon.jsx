@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 
-class TrainedPokemon extends Component {
+class TrainedPokemon extends PureComponent {
   constructor() {
     super();
 
     this.state = {
       xp: 0,
+      idInterval: null,
     };
     this.gainExp = this.gainExp.bind(this);
   }
@@ -15,6 +16,18 @@ class TrainedPokemon extends Component {
     this.setState({
       xp: xp + 10,
     });
+  }
+
+  componentDidMount() {
+    const idInterval = setInterval(this.gainExp, 100);
+
+    this.setState({
+      idInterval,
+    });
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.state.idInterval);
   }
 
   render() {

@@ -21,6 +21,12 @@ code {
   flex-wrap: wrap;
 }
 
+.Loading {
+  text-align: center;
+  font-size: 3rem;
+  margin: 1rem;
+}
+
 .Pokemon,
 .TrainedPokemon {
   flex: 0 0 7rem;

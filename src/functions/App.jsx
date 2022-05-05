@@ -2,7 +2,7 @@ import React, { PureComponent } from 'react';
 import Trainer from './Trainer';
 import PokemonList from './PokemonList';
 import Filters from './Filters';
-import fetchPokemon from '../utils/fetchPokemon';
+import fetchPokemons from '../utils/fetchPokemon';
 
 class App extends PureComponent {
   constructor() {
@@ -18,15 +18,13 @@ class App extends PureComponent {
   }
 
   selectType(t) {
-    const { selected } = this.state;
-
-    this.setState({
-      selected: selected === t ? null : t,
-    });
+    this.setState(prevState => ({
+      selected: prevState.selected === t ? null : t,
+    }));
   }
 
   componentDidMount() {
-    fetchPokemon().then(data => {
+    fetchPokemons().then(data => {
       this.setState({
         data,
         loading: false,
@@ -51,12 +49,12 @@ class App extends PureComponent {
 
     const content = (
       <>
-        <PokemonList pokemons={pokemonsToDisplay} />
         <Filters
           types={uniqueTypes}
           active={selected}
           filter={this.selectType}
         />
+        <PokemonList pokemons={pokemonsToDisplay} />
       </>
     );
 
