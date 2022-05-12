@@ -6,15 +6,23 @@ class TrainedPokemon extends PureComponent {
 
     this.state = {
       xp: 0,
+      nickname: 'Romain',
       idInterval: null,
     };
     this.gainExp = this.gainExp.bind(this);
+    this.rename = this.rename.bind(this);
   }
 
   gainExp() {
     const { xp } = this.state;
     this.setState({
       xp: xp + 10,
+    });
+  }
+
+  rename(e) {
+    this.setState({
+      nickname: e.target.value,
     });
   }
 
@@ -31,21 +39,15 @@ class TrainedPokemon extends PureComponent {
   }
 
   render() {
-    const { name, src } = this.props;
-    const { xp } = this.state;
-
-    function displayName() {
-      console.log('Je suis', name);
-    }
+    const { name, src, releaseSelf } = this.props;
+    const { xp, nickname } = this.state;
 
     return (
-      <li
-        className="TrainedPokemon"
-        onClick={displayName}
-        onMouseMove={this.gainExp}
-      >
-        <div className="name">{name}</div>
+      <li className="TrainedPokemon" onMouseMove={this.gainExp}>
+        <input value={nickname} onChange={this.rename} />
+        <div className="name">{nickname || name}</div>
         <div className="exp">{xp}</div>
+        <button onClick={releaseSelf}>Libérer</button>
         {src && <img src={src} alt={name} />}
       </li>
     );

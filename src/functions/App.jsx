@@ -2,7 +2,10 @@ import React, { PureComponent } from 'react';
 import Trainer from './Trainer';
 import PokemonList from './PokemonList';
 import Filters from './Filters';
+import Counter from './Counter';
 import fetchPokemons from '../utils/fetchPokemon';
+
+// function App() {}
 
 class App extends PureComponent {
   constructor() {
@@ -15,12 +18,31 @@ class App extends PureComponent {
       loading: true,
     };
     this.selectType = this.selectType.bind(this);
+    this.catchPokemon = this.catchPokemon.bind(this);
+    this.releasePokemon = this.releasePokemon.bind(this);
   }
 
   selectType(t) {
     this.setState(prevState => ({
       selected: prevState.selected === t ? null : t,
     }));
+  }
+
+  catchPokemon(pokemon) {
+    this.setState(prevState => {
+      const p = { ...pokemon, catchId: Date.now() };
+
+      return {
+        bag: [...prevState.bag, p],
+      };
+    });
+  }
+  releasePokemon(pokemon) {
+    this.setState(prevState => {
+      return {
+        bag: prevState.bag.filter(p => p.catchId !== pokemon.catchId),
+      };
+    });
   }
 
   componentDidMount() {
@@ -33,9 +55,7 @@ class App extends PureComponent {
   }
 
   render() {
-    const { selected, data, loading } = this.state;
-
-    const bag = data.length === 0 ? [] : [data[0]];
+    const { selected, data, bag, loading } = this.state;
 
     const deepTypes = data.map(p => p.types.map(t => t.type.name));
     const flatTypes = deepTypes.flat();
@@ -54,7 +74,10 @@ class App extends PureComponent {
           active={selected}
           filter={this.selectType}
         />
-        <PokemonList pokemons={pokemonsToDisplay} />
+        <PokemonList
+          pokemons={pokemonsToDisplay}
+          catchPokemon={this.catchPokemon}
+        />
       </>
     );
 
@@ -62,7 +85,13 @@ class App extends PureComponent {
 
     return (
       <div className="App">
-        <Trainer name="Romain" address="1 rue des pokemons" bag={bag} />
+        <Trainer
+          name="Romain"
+          address="1 rue des pokemons"
+          bag={bag}
+          releasePokemon={this.releasePokemon}
+        />
+        {/* <Counter /> */}
         {loading ? loader : content}
       </div>
     );

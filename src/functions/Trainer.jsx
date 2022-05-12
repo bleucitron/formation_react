@@ -2,15 +2,16 @@ import React from 'react';
 import TrainedPokemon from './TrainedPokemon';
 
 function Trainer(props) {
-  const { name, address, bag } = props;
+  const { name, address, bag, releasePokemon } = props;
 
   const instances = bag.map(item => {
     return (
       <TrainedPokemon
-        key={item.id}
+        key={item.catchId}
         name={item.name}
         weight={item.weight}
         src={item.sprites.back_default}
+        releaseSelf={() => releasePokemon(item)}
       />
     );
   });
@@ -19,7 +20,7 @@ function Trainer(props) {
     <div className="Trainer">
       <div className="name">{name}</div>
       <div className="address">{address}</div>
-      <ul className="bag">{instances}</ul>
+      <ul className="bag list">{instances}</ul>
     </div>
   );
 }

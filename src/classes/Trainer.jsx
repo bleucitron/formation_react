@@ -3,15 +3,16 @@ import TrainedPokemon from './TrainedPokemon';
 
 class Trainer extends PureComponent {
   render() {
-    const { name, address, bag } = this.props;
+    const { name, address, bag, releasePokemon } = this.props;
 
     const instances = bag.map(item => {
       return (
         <TrainedPokemon
-          key={item.id}
+          key={item.catchId}
           name={item.name}
           weight={item.weight}
           src={item.sprites.back_default}
+          releaseSelf={() => releasePokemon(item)}
         />
       );
     });
@@ -20,7 +21,7 @@ class Trainer extends PureComponent {
       <div className="Trainer">
         <div className="name">{name}</div>
         <div className="address">{address}</div>
-        <ul className="bag">{instances}</ul>
+        <ul className="bag list">{instances}</ul>
       </div>
     );
   }

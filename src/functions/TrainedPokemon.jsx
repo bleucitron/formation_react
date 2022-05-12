@@ -15,54 +15,27 @@ class TrainedPokemon extends PureComponent {
     this.setState(prevState => ({ xp: prevState.xp + 1 }));
   }
 
-  // componentDidMount() {
-  //   const idInterval = setInterval(this.gainExp, 100);
+  componentDidMount() {
+    const idInterval = setInterval(this.gainExp, 100);
 
-  //   this.setState({
-  //     idInterval,
-  //   });
-  // }
+    this.setState({
+      idInterval,
+    });
+  }
 
   componentWillUnmount() {
     clearInterval(this.state.idInterval);
   }
 
-  // shouldComponentUpdate(nextProps) {
-  //   if (nextProps.name !== this.props.name) {
-  //     return true;
-  //   }
-  //   if (nextProps.age !== this.props.age) {
-  //     return true;
-  //   }
-  //   if (nextProps.src !== this.props.src) {
-  //     return true;
-  //   }
-  //   if (nextProps.src !== this.props.src) {
-  //     return true;
-  //   }
-  //   if (nextProps.src !== this.props.src) {
-  //     return true;
-  //   }
-  //   if (nextProps.src !== this.props.src) {
-  //     return true;
-  //   }
-  //   if (nextProps.src !== this.props.src) {
-  //     return true;
-  //   }
-
-  //   return false;
-  // }
-
   render() {
-    const { name, src } = this.props;
+    const { name, src, releaseSelf } = this.props;
     const { xp } = this.state;
-
-    console.log('NAME', name);
 
     return (
       <li className="TrainedPokemon" onMouseMove={this.gainExp}>
         <div className="name">{name}</div>
         <div className="exp">{xp}</div>
+        <button onClick={releaseSelf}>Libérer</button>
         {src && <img src={src} alt={name} />}
       </li>
     );
