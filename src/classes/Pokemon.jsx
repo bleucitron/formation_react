@@ -1,18 +1,21 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-class Pokemon extends Component {
+class Pokemon extends React.Component {
   render() {
-    const { name, weight, src } = this.props;
+    const { pokemon } = this.props;
+    const { name, weight, sprites } = pokemon;
 
     function displayName() {
       console.log('Je suis', name);
     }
 
     return (
-      <li className='Pokemon' onClick={displayName}>
-        <div className='name'>{name}</div>
-        <div className='weight'>{weight}</div>
-        {src && <img src={src} alt={name} />}
+      <li className="Pokemon" onClick={displayName}>
+        <div className="name">{name}</div>
+        <div className="weight">{weight}</div>
+        {sprites.front_default && (
+          <img src={sprites.front_default} alt={name} />
+        )}
       </li>
     );
   }

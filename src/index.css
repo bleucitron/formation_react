@@ -37,6 +37,12 @@ code {
   font-size: 1.3rem;
 }
 
+.Personne {
+  text-align: center;
+  font-size: 3rem;
+  margin-block: 1rem;
+}
+
 .Trainer {
   display: flex;
   align-items: baseline;
