@@ -2,26 +2,21 @@ import React from 'react';
 
 import Trained from './TrainedPokemon';
 
-class Trainer extends React.Component {
+class Trainer extends React.PureComponent {
   render() {
-    const { name, address, bag } = this.props;
-
-    const instances = bag.map(p => {
-      return (
-        <Trained
-          key={p.id}
-          name={p.name}
-          src={p.sprites.front_default}
-          weight={p.weight}
-        />
-      );
-    });
+    const { name, address, bag, clearBag } = this.props;
 
     return (
       <div className="Trainer">
         <div className="name">{name}</div>
         <div className="address">{address}</div>
-        <div className="bag">{instances}</div>
+        <button onClick={clearBag}>Clear</button>
+        <div className="bag">
+          <PokemonList
+            pokemons={bag}
+            renderPokemon={p => <TrainedPokemon key={p.id} pokemon={p} />}
+          />
+        </div>
       </div>
     );
   }

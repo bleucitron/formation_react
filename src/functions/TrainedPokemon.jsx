@@ -1,5 +1,11 @@
 import React from 'react';
 
+import Pokemon from './Pokemon';
+
+function Header() {
+  return <header>COUCOU</header>;
+}
+
 class TrainedPokemon extends React.PureComponent {
   constructor() {
     super();
@@ -13,12 +19,14 @@ class TrainedPokemon extends React.PureComponent {
 
   gainExp(inc = 10) {
     this.setState(prevState => {
-      return { experience: prevState.experience + inc };
+      return {
+        experience: prevState.experience + inc,
+      };
     });
   }
 
   componentDidMount() {
-    this.interval = setInterval(this.gainExp, 1000);
+    this.interval = setInterval(this.gainExp, 100);
   }
 
   componentWillUnmount() {
@@ -29,9 +37,11 @@ class TrainedPokemon extends React.PureComponent {
     const { experience } = this.state;
 
     return (
-      <Pokemon pokemon={this.props} handleMouseMove={() => this.gainExp(3)}>
-        <div className="experience">{experience}</div>
-      </Pokemon>
+      <div className="TrainedPokemon" onMouseMove={() => this.gainExp(3)}>
+        <Pokemon {...this.props} header={<Header />}>
+          <div className="experience">{experience}</div>
+        </Pokemon>
+      </div>
     );
   }
 }

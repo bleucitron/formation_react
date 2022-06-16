@@ -21,8 +21,7 @@ code {
   flex-wrap: wrap;
 }
 
-.Pokemon,
-.TrainedPokemon {
+.Pokemon {
   flex: 0 0 7rem;
   display: flex;
   flex-direction: column;
@@ -43,11 +42,22 @@ code {
   margin-block: 1rem;
 }
 
+.active {
+  background: black;
+  color: white;
+}
+
+.loader {
+  font-size: 2rem;
+  margin-block: 1rem;
+  text-align: center;
+}
+
 .Trainer {
   display: flex;
   align-items: baseline;
   background: lightblue;
-
+  height: 15rem;
 }
 
 .Trainer .name {

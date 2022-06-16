@@ -15,15 +15,24 @@ class App extends React.PureComponent {
       isLoading: true,
       data: [],
       bag: [],
+      text: '',
     };
 
     this.filter = this.filter.bind(this);
     this.clearBag = this.clearBag.bind(this);
+    this.updateText = this.updateText.bind(this);
   }
 
   filter() {
     this.setState(prevState => {
-      return { isElectric: !prevState.isElectric };
+      return {
+        isElectric: !prevState.isElectric,
+      };
+    });
+  }
+  updateText(e) {
+    this.setState({
+      text: e.target.value,
     });
   }
 
@@ -44,14 +53,20 @@ class App extends React.PureComponent {
   }
 
   render() {
-    const { isElectric, data, isLoading, bag } = this.state;
+    const { isElectric, data, isLoading, bag, text } = this.state;
 
-    const pokemonsToDisplay = isElectric
+    const filteredByType = isElectric
       ? data.filter(pokemon => {
           const types = pokemon.types.map(t => t.type.name);
           return types.includes('electric');
         })
       : data;
+
+    const filteredByText = text
+      ? filteredByType.filter(pokemon => {
+          return pokemon.name.includes(text);
+        })
+      : filteredByType;
 
     return (
       <div className="App">
@@ -61,11 +76,16 @@ class App extends React.PureComponent {
           bag={bag}
           clearBag={this.clearBag}
         />
-        <Filters active={isElectric} toggle={this.filter} />
+        <Filters
+          text={text}
+          active={isElectric}
+          toggle={this.filter}
+          search={this.updateText}
+        />
         {isLoading ? (
           <div className="loader">Loading...</div>
         ) : (
-          <PokemonList pokemons={pokemonsToDisplay} />
+          <PokemonList pokemons={filteredByText} />
         )}
       </div>
     );
