@@ -12,15 +12,15 @@ Depuis sa création, la communauté n'a cessé de croître, amenant régulièrem
 
 ## Tests
 
-### [Enzyme](https://enzymejs.github.io/enzyme/)
+### [React testing library](https://testing-library.com/docs/react-testing-library/intro)
 
 ## Utilitaires
 
 ### [Redux](https://redux.js.org/)
 
-### [Storybook](https://storybook.js.org/)
+### [React-query](https://react-query.tanstack.com/)
 
-### [Styled-components](https://styled-components.com/)
+### [Storybook](https://storybook.js.org/)
 
 ## Meta-frameworks
 
