@@ -4,7 +4,7 @@ import PokemonList from './PokemonList';
 import TrainedPokemon from './TrainedPokemon';
 
 function Trainer(props) {
-  const { name, address, bag, clearBag } = props;
+  const { name, address, bag, clearBag, releasePokemon } = props;
 
   return (
     <div className="Trainer">
@@ -14,7 +14,13 @@ function Trainer(props) {
       <div className="bag">
         <PokemonList
           pokemons={bag}
-          renderPokemon={p => <TrainedPokemon key={p.id} pokemon={p} />}
+          renderPokemon={p => (
+            <TrainedPokemon
+              key={p.trainedId}
+              releasePokemon={releasePokemon}
+              pokemon={p}
+            />
+          )}
         />
       </div>
     </div>

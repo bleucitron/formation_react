@@ -1,95 +1,110 @@
-import React from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 
 import Trainer from './Trainer';
+import Clock from './Clock';
 import PokemonList from './PokemonList';
 import Filters from './Filters';
 
 import { fetchAll } from '../utils/pokemons';
+import LangContext from '../utils/context';
 
-class App extends React.PureComponent {
-  constructor() {
-    super();
+function extractTypes(data) {
+  const allTypes = data.map(item => item.types.map(t => t.type.name)).flat();
+  const set = new Set(allTypes);
+  const uniqueTypes = [...set];
+  return uniqueTypes;
+}
 
-    this.state = {
-      isElectric: false,
-      isLoading: true,
-      data: [],
-      bag: [],
-      text: '',
-    };
+function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [selectedType, setSelectedType] = useState('');
+  const [data, setData] = useState([]);
+  const [bag, setBag] = useState([]);
+  const [text, setText] = useState('');
+  const [lang, setLang] = useState('en');
 
-    this.filter = this.filter.bind(this);
-    this.clearBag = this.clearBag.bind(this);
-    this.updateText = this.updateText.bind(this);
-  }
-
-  filter() {
-    this.setState(prevState => {
-      return {
-        isElectric: !prevState.isElectric,
-      };
-    });
-  }
-  updateText(e) {
-    this.setState({
-      text: e.target.value,
-    });
-  }
-
-  clearBag() {
-    this.setState({
-      bag: [],
-    });
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     fetchAll().then(value => {
-      this.setState({
-        data: value,
-        isLoading: false,
-        bag: [value[0]],
-      });
+      setData(value);
+      setIsLoading(false);
     });
+  }, []);
+
+  function filter(t) {
+    setSelectedType(prevType => (prevType === t ? '' : t));
   }
 
-  render() {
-    const { isElectric, data, isLoading, bag, text } = this.state;
+  function updateText(e) {
+    setText(e.target.value);
+  }
 
-    const filteredByType = isElectric
-      ? data.filter(pokemon => {
-          const types = pokemon.types.map(t => t.type.name);
-          return types.includes('electric');
-        })
-      : data;
+  function clearBag() {
+    setBag([]);
+  }
 
-    const filteredByText = text
-      ? filteredByType.filter(pokemon => {
-          return pokemon.name.includes(text);
-        })
-      : filteredByType;
+  const types = useMemo(() => extractTypes(data), [data]);
 
-    return (
+  function catchPokemon(pokemon) {
+    const trainedId = Date.now();
+    const trainedPokemon = { ...pokemon, trainedId: trainedId };
+
+    setBag(prevBag => [...prevBag, trainedPokemon]);
+  }
+
+  function releasePokemon(pokemon) {
+    setBag(prevBag => prevBag.filter(p => p.trainedId !== pokemon.trainedId));
+  }
+
+  const filteredByType = selectedType
+    ? data.filter(pokemon => {
+        const types = pokemon.types.map(t => t.type.name);
+        return types.includes(selectedType);
+      })
+    : data;
+
+  const filteredByText = text
+    ? filteredByType.filter(pokemon => {
+        return pokemon.name.includes(text);
+      })
+    : filteredByType;
+
+  return (
+    <LangContext.Provider value={lang}>
       <div className="App">
+        <button
+          className={lang === 'fr' ? 'active' : ''}
+          onClick={() => setLang('fr')}
+        >
+          Fr
+        </button>
+        <button
+          className={lang === 'en' ? 'active' : ''}
+          onClick={() => setLang('en')}
+        >
+          En
+        </button>
         <Trainer
           name="John"
           address="1 rue des Digimons"
           bag={bag}
-          clearBag={this.clearBag}
+          clearBag={clearBag}
+          releasePokemon={releasePokemon}
         />
         <Filters
           text={text}
-          active={isElectric}
-          toggle={this.filter}
-          search={this.updateText}
+          types={types}
+          selectedType={selectedType}
+          toggle={filter}
+          search={updateText}
         />
+        <Clock />
         {isLoading ? (
           <div className="loader">Loading...</div>
         ) : (
-          <PokemonList pokemons={filteredByText} />
+          <PokemonList pokemons={filteredByText} catchPokemon={catchPokemon} />
         )}
       </div>
-    );
-  }
+    </LangContext.Provider>
+  );
 }
-
 export default App;

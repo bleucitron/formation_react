@@ -1,49 +1,31 @@
 import React from 'react';
+import { useAutoExp } from '../utils/hooks';
 
 import Pokemon from './Pokemon';
 
-function Header() {
-  return <header>COUCOU</header>;
-}
+function TrainedPokemon(props) {
+  const { exp, gainExp, setExpInterval } = useAutoExp();
 
-class TrainedPokemon extends React.PureComponent {
-  constructor() {
-    super();
-
-    this.state = {
-      experience: 100,
-    };
-
-    this.gainExp = this.gainExp.bind(this);
+  function changeInterval(e, nb) {
+    e.stopPropagation();
+    setExpInterval(nb);
   }
 
-  gainExp(inc = 10) {
-    this.setState(prevState => {
-      return {
-        experience: prevState.experience + inc,
-      };
-    });
-  }
+  const buttons = (
+    <div>
+      <button onClick={e => changeInterval(e, 500)}>100</button>
+      <button onClick={e => changeInterval(e, 1000)}>1000</button>
+      <button onClick={e => changeInterval(e, 2000)}>2000</button>
+    </div>
+  );
 
-  componentDidMount() {
-    this.interval = setInterval(this.gainExp, 100);
-  }
-
-  componentWillUnmount() {
-    clearInterval(this.interval);
-  }
-
-  render() {
-    const { experience } = this.state;
-
-    return (
-      <div className="TrainedPokemon" onMouseMove={() => this.gainExp(3)}>
-        <Pokemon {...this.props} header={<Header />}>
-          <div className="experience">{experience}</div>
-        </Pokemon>
-      </div>
-    );
-  }
+  return (
+    <div className="TrainedPokemon" onMouseMove={() => gainExp(3)}>
+      <Pokemon {...props} buttons={buttons} handleClick={props.releasePokemon}>
+        <div className="experience">{exp}</div>
+      </Pokemon>
+    </div>
+  );
 }
 
 export default TrainedPokemon;

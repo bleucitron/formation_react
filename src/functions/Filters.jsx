@@ -1,13 +1,25 @@
-import React from 'react';
+import React, { useContext } from 'react';
+
+import LangContext from '../utils/context';
+import dict from '../utils/dict';
 
 function Filters(props) {
-  const { text, search, toggle, active } = props;
-  const classes = active ? 'active' : '';
+  const { types, text, search, toggle, selectedType } = props;
+  const lang = useContext(LangContext);
+
+  const buttons = types.map(t => (
+    <button
+      className={t === selectedType ? 'active' : ''}
+      onClick={() => toggle(t)}
+      key={t}
+    >
+      {lang === 'fr' ? dict[t] ?? t : t}
+    </button>
+  ));
+
   return (
     <>
-      <button className={classes} onClick={toggle}>
-        Électriques
-      </button>
+      {buttons}
       <input value={text} onChange={search} />
     </>
   );
