@@ -5,12 +5,13 @@
 ## 1) Introduction
 
 - [Origines](./contenus/1_introduction/1_origines.md)
-- [Principes](./contenus/1_introduction/2_principes.md)
-  - [Architecture par composants](./contenus/1_introduction/2_principes.md#architecture-par-composants)
-  - [Flux de données unidirectionnel](./contenus/1_introduction/2_principes.md#flux-de-données-unidirectionnel)
-  - [DOM virtuel](./contenus/1_introduction/2_principes.md#dom-virtuel)
-- [JSX](./contenus/1_introduction/3_jsx.md)
-- [Premiers pas](./contenus/1_introduction/4_lets_go.md)
+- [WTF is React?](./contenus/1_introduction/2_wtf_react.md)
+- [Principes](./contenus/1_introduction/3_principes.md)
+  - [Architecture par composants](./contenus/1_introduction/3_principes.md#architecture-par-composants)
+  - [Flux de données unidirectionnel](./contenus/1_introduction/3_principes.md#flux-de-données-unidirectionnel)
+  - [DOM virtuel](./contenus/1_introduction/3_principes.md#dom-virtuel)
+- [JSX](./contenus/1_introduction/4_jsx.md)
+- [Premiers pas](./contenus/1_introduction/5_lets_go.md)
 
 ## 2) Composants classes
 

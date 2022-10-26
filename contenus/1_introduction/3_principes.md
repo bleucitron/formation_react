@@ -147,4 +147,4 @@ Cette approche stratégique du travail sur le DOM a permis à React d'atteindre 
 
 - Seules les différences sont réellement appliquées au DOM réel
 
-## à suivre: [JSX](./3_jsx.md)
+## à suivre: [JSX](./4_jsx.md)

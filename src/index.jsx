@@ -1,9 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-
-import './reset.css';
+import ReactDOM from 'react-dom/client';
 import './index.css';
 
-const pokemon = <div>Pikachu</div>;
+const appRoot = ReactDOM.createRoot(document.getElementById('root'));
 
-ReactDOM.render(pokemon, document.getElementById('root'));
+appRoot.render(<div>Pokemon</div>);

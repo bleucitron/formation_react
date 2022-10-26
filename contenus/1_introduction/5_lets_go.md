@@ -10,30 +10,44 @@ Mais avant tout, il faut avoir conscience de l'environnement de travail dans leq
 
 Notre projet utilise les modules ES6, et nécessite du _bundling_. De plus, on va utiliser la syntaxe JSX. Il nous faut donc un bundler assisté de Babel.
 
-Plusieurs options sont disponibles, mais par souci de simplicité, on va utiliser [Create-React-App](https://create-react-app.dev/), qui va s'occuper de tout.
+[Plusieurs options sont disponibles](https://reactjs.org/docs/create-a-new-react-app.html), mais par souci de simplicité, on va utiliser [Vite](https://vitejs.dev/guide/), qui va s'occuper de tout.
 
-Le projet est déjà configuré pour travailler avec Create-React-App. Il nous faut quand même installer les dépendances nécessaires.
-
-> Dans votre console, à la racine du projet, lancer la commande
-
+Le projet est déjà configuré pour travailler avec Vite, avec la commande suivante:
 ```bash
-npm i # installe les dépendences décrites dans package.json
+npm create vite@latest my-cool-app -- --template react
 ```
 
-Pour pouvoir utiliser React, il faut l'avoir installé.
+A minima, pour utiliser React avec NPM, il faut avoir installé `react` (React lui-même) et `react-dom` (le DOM virtuel). Grâce à Vite, ces dépendances sont déjà prévues dans le `package.json`.
 
-> Lancer la commande
-
-```bash
-npm i react react-dom # installe React et son DOM virtuel
+```json
+"dependencies": {
+  "react": "^18.2.0",
+  "react-dom": "^18.2.0"
+},
 ```
 
-Une fois que tout s'est bien passé, on peut lancer les outils de développement.
-
-> Lancer la commande
+Il ne reste qu'à les installer, avec la commande suivante, à la racine du projet.
 
 ```bash
-npm start # démarre le serveur de développement de CRA
+npm i # à la racine du projet
+```
+
+> Pour installer React sur un projet NPM existant, vous pouvez utiliser `npm i react react-dom`.
+
+Une fois que tout s'est bien passé, on peut lancer les outils de développement prévus par Vite.
+
+```json
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "preview": "vite preview"
+},
+```
+
+Dans votre console, lancer:
+
+```bash
+npm run dev # démarre le serveur de développement
 ```
 
 ## Application minimale
@@ -91,7 +105,7 @@ _Create-React-App impose un système de fichiers particulier, et discutable, not
 
 - Utiliser `console.log()`
 
-5. > Ajouter un 2e pokemon, avec les mêmes fonctionnalités, et mettre les 2 dans un `<ul>`
+5. > Ajouter un 2e pokemon, en dupliquant le code du premier, et mettre les 2 dans un `<ul>`
 
 6. > Ajouter un `<div>` en frère du `<ul>`. Ce `<div>` représente le dresseur de Pokémons et doit avoir un classe `Trainer`. Il doit afficher un `name` et une `address`. Le `div` et le `ul` doivent avoir un parent commun
 
