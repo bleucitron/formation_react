@@ -13,12 +13,14 @@
 - [JSX](./contenus/1_introduction/4_jsx.md)
 - [Premiers pas](./contenus/1_introduction/5_lets_go.md)
 
-## 2) Composants classes
+## 2) Composants
 
-- [Le composant de base](./contenus/2_composant/1_bases.md)
-- [Mise à jour de l'état](./contenus/2_composant/2_state.md)
-- [Cycle de vie](./contenus/2_composant/3_cycle_de_vie.md)
-- [Extras](./contenus/2_composant/4_extras.md)
+- [Définition](./contenus/2_component/1_definition.md)
+- [Props](./contenus/2_component/2_props.md)
+- [Rendu conditionnel](./contenus/2_component/3_conditional_rendering.md)
+- [Tableaux](./contenus/2_component/4_lists.md)
+- [Évènements](./contenus/2_component/5_events.md)
+- [DevTools](./contenus/2_component/6_devtools.md)
 
 ## 3) Hooks
 

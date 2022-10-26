@@ -181,4 +181,6 @@ Dans du JSX,
 
 On recommande souvent l'utilisation de [coloration syntaxique adaptée](https://babeljs.io/docs/en/editors/) et du formatteur automatique de votre IDE pour vous aider à écrire du JSX.
 
-## à suivre: [Let's go Pikachu !](./4_lets_go.md)
+---
+
+### à suivre: [Let's go Pikachu !](./5_lets_go.md)

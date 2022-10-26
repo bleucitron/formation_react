@@ -115,4 +115,6 @@ _Create-React-App impose un système de fichiers particulier, et discutable, not
 
 8. > Utiliser ce composant pour afficher les pokemons, en leur passant les données `name` et `weight` en "attribut"
 
-## À suivre: [Les composants](../2_composant/1_bases.md)
+---
+
+### À suivre: [Les composants](../2_component/index.md)

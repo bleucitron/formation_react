@@ -108,4 +108,6 @@ import monDefaut, { a, b } from 'mon-module';
 export default function () {}
 ```
 
-## à suivre: [React](../1_introduction/1_origines.md)
+---
+
+### à suivre: [React](../1_introduction/1_origines.md)

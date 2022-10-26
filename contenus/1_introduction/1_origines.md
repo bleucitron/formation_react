@@ -38,5 +38,6 @@ Quelques uns de ces projets commencent même à remettre en cause certains pilie
 
 - [Svelte](https://svelte.dev/) (2016)
 
+---
 
-## à suivre: [WTF is React ?](./2_wtf_react.md)
+### à suivre: [WTF is React ?](./2_wtf_react.md)

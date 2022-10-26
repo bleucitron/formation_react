@@ -33,4 +33,6 @@ Les problèmes que les équipes de Facebook identifient sont:
 
 React a été développé pour répondre à ces problématiques.
 
-## à suivre: [Principes](./3_principes.md)
+---
+
+### à suivre: [Principes](./3_principes.md)
