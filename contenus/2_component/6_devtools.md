@@ -13,4 +13,4 @@
 
 ---
 
-### à suivre: [`State`](./2_state.md)
+### à suivre: [Le `state`](./2_state/index.md)

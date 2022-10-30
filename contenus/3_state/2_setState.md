@@ -1,188 +1,88 @@
 # Mettre à jour l'état
 
-**Pour changer le `state`, il faut utiliser la méthode `this.setState()`**. Utiliser `this.setState()` provoque 2 choses:
+On a vu que la définition d'un `state` se faisait via `useState`.
 
-- la mise à jour de l'objet `this.state`
-- le déclenchement de `render()`
+```jsx
+const [x, setX] = useState(0);
+```
 
-**Il ne faut pas changer le `state` directement**, car `render()` ne sera pas appelé.
+Pour rappel, `useState` nous renvoie donc un tableau de 2 éléments:
+- la valeur actuelle de l'état
+- la fonction pour changer cette valeur
+
+Pour faire évoluer la valeur de notre `state`, il faut donc utiliser la fonction fournie par `useState`. Utiliser `useState` va faire 2 choses:
+- mettre à jour la valeur de l'état
+- déclencher le rendu de l'instance
+
+**Il ne sert donc à rien de modifier le `state` directement**, car dans ce cas, même si la valeur change, aucun rendu n'est effectué, et il ne passe rien à l'écran.
 
 ```js
-// écrire ceci pour faire évoluer le state ne déclenchera pas de rendu
-this.state = {
-  age: 2,
-};
+const [count, setCount] = useState(0);
+
+count = 10 // ne sert à rien
+setCount(10) // met à jour l'état, et déclenche le rendu
 ```
 
-On passe à `setState()` un objet qui représente les changements que l'on souhaite appliquer au `state`. **On peut modifier le `state` morceau par morceau**, ou en intégralité. Dans tous les cas, ils seront intégrés au `state` complet du composant.
-
-```js
-// à l'initialisation
-this.state = {
-  age: 0,
-  nickname: "bébé 'tin",
-};
-
-// ailleurs
-this.setState({
-  age: 10, // ici, on ne change que this.state.age, le nickname reste le même
-});
-```
-
-En général, on change le `state` via les évènements du DOM.
+En général, **on modifie l'état en réaction à des évènements**, par exemple dans des event listeners, type `onClick`.
 
 ```jsx
-  render() {
-    const { age } = this.state;
+function Count() {
+  const [count, setCount] = useState(0);
 
-    function avoir10ans() {
-      this.setState({age: 10});
-    }
-
-    return <div onClick={avoir10ans}>{age}</div>; // avoir10ans() sera exécutée au clic
-  }
-```
-
-Attention ! Ne pas mettre à jour le `state` directement dans `render()`.
-
-## Le problème de `this`
-
-L'exemple ci-dessus n'est pas optimal. En effet, `avoir10ans` est définie dans `render()`, ce qui signifie qu'elle redéfinie à chaque rendu, ce qui n'est pas nécessaire et consomme des ressources du navigateur inutilement.
-
-Un composant étant une classe Javascript, il est possible de lui définir des méthodes personnalisées. Par exemple, `render()` est une méthode personnalisée fournie par React, qui a un rôle très spécifique.
-
-Mais il est possible de créer ses propres méthodes personnalisées. Elles sont alors accessible via `this.`. Alors la méthode n'est définie qu'une seule fois, lorsque le composant est défini.
-
-```jsx
-class MonComposant extends React.Component {
-  constructor() {}
-
-  avoir10ans() {
-    this.setState({ age: 10 });
-  }
-
-  render() {
-    return <div onClick={this.avoir10ans}>{age}</div>;
-  }
+  return (
+    <div>
+      <div>{count}</div>
+      <button onClick={() => setCount(10)}>
+        Mettre à 10
+      </button>
+    </div>
+  )
 }
 ```
 
-L'exemple ci-dessus va générer un bug au clic: `Cannot read 'setState' of undefined`. Lorsque l'on va cliquer, on va appeler `this.avoir10ans()`, qui utilise `this.setState()`. Mais on reçoit une erreur qui nous informe que `this` est `undefined`.
-
-Ce problème, très classique, n'est pas lié à React, mais à [la façon dont `this` fonctionne en Javascript](https://reactkungfu.com/2015/07/why-and-how-to-bind-methods-in-your-react-component-classes/).
-
-`this` décrit le contexte courant. Mais en Javascript il est défini au moment de l'exécution, et non de la définition de la fonction qui l'utilise. Dans le cas de composants React, lorsqu'ils appellent une méthode personnalisée, `this` n'est pas défini.
-
-C'est cette spécificité de Javascript qui génère ce problème en React. Pour le résoudre, **il faut forcer la valeur de `this` au moment de la définition de la méthode**.
-
-On fait ça en _bindant_ la méthode concernée dans le constructor.
+Il est bien sûr possible d'encapsuler l'appel de `setX` dans une fonction si l'on veut.
 
 ```jsx
-class MonComposant extends React.Component {
-  constructor() {
-    this.avoir10ans = this.avoir10ans.bind(this);
+function Count() {
+  const [count, setCount] = useState(0);
+
+  function setTo10() {
+    setCount(10)
   }
 
-  avoir10ans() {
-    this.setState({ age: 10 });
-  }
-
-  render() {
-    return <div onClick={this.avoir10ans}>{age}</div>;
-  }
+  return (
+    <div>
+      <div>{count}</div>
+      <button onClick={setTo10}>
+        Mettre à 10
+      </button>
+    </div>
+  )
 }
 ```
 
-Ainsi, lorsque `avoir10ans()` s'exécutera, `this` ne sera pas `undefined`, mais fera bien référence au composant. Ce qui permettra d'avoir accès normalement à `this.setState()`, `this.props`, `this.state`, ...
+> Comme `setX` déclenche le rendu d'une instance, il ne faut **jamais utiliser `setX` à la racine de la fonction d'un composant**, ce qui déclencherait une boucle infinie de rendu.
 
-Une autre façon de résoudre le problème est d'utiliser une fonction fléchée.
-
-```jsx
-class MonComposant extends React.Component {
-  constructor() {}
-
-  avoir10ans() {
-    this.setState({ age: 10 });
-  }
-
-  render() {
-    return <div onClick={() => this.avoir10ans()}>{age}</div>; // pas de problème lié à this
-  }
-}
-```
-
-**Utiliser une fonction fléchée permet d'éviter le problème du `this`**, car les fonctions fléchées utilisent le `this` défini lors de leur création. Il faut toutefois avoir conscience que dans ce cas, on crée une nouvelle fonction fléchée à chaque rendu, ce qui peut être nécessaire.
-
-## Procuration
-
-On a vu que le `state` est local à chaque composant. Il ne peut pas en sortir. Il peut éventuellement être transmis à un enfant en tant que `props`, mais sans que l'enfant ne soit conscient que cette `props` vient du `state` de son parent.
-
-Il n'est donc pas possible à un composant d'avoir accès au `state` d'un autre composant, et encore moins de le modifier.
-
-Chaque composant est le seul responsable de son `state`.
-
-**Un composant peut néanmoins donner procuration à ses enfants pour qu'ils puissent agir sur le `state`**. Le parent donne explicitement le droit à son enfant de modifier son `state`.
-Le parent fournit alors une fonction en tant que `props`, que l'enfant pourra exécuter, sans qu'il soit conscient de ce que cette fonction fait.
-
-```jsx
-class Parent extends React.Component {
-  enerver() {
-    const { enervement } = this.state;
-    this.setState({ enervement: enervement + 1000 });
-  }
-
-  render() {
-    return <Enfant crier={this.enerver} />;
-  }
-}
-
-class Enfant extends React.Component {
-  render() {
-    return <div onClick={this.props.crier}>Romain</div>;
-  }
-}
-```
-
-## La zone d'influence du `state`
-
-Le state appartient à un composant, et ne peut en sortir. Mais il concerne tout de même potentiellement tous les descendants du composant.
-
-En effet, on a vu que l'on pouvait redescendre le `state` dans les enfants en tant que `props`. Les enfants n'ont alors pas conscience que leur `props` vient du `state` du parent. On peut alors parler de _zone d'influence du `state`_.
-
-En revanche, il n'est pas possible de remonter le `state` au dessus du composant qui le définit, ou à des composants "neveux" ou "nièces". On ne peut pas utiliser un `state` en dehors de sa zone d'influence.
-
-Si un `state` a besoin d'être fourni à des composants qui ne font pas partie de la descendance du composant, alors le `state` est mal placé.
-
-**Le `state` doit être placé sur le plus proche ancêtre commun à tous les composants qui le nécessitent**.
+---
 
 ## TL;DR
 
-- Le `state` permet de faire évoluer un composant
-- Le `state` reste au sein de l'instance, il ne peut en sortir
-- On accède au `state` via `this.state`, qui renvoie un objet
-- On initialise le `state` dans `constructor()`
-- On change le `state` via la méthode `this.setState()`, qui déclenche `render()`
-- On peut changer le `state` morceau par morceau.
-- Chaque méthode personnalisée qui utilise `this` a besoin d'être bindée dans le `constructor()`
-- Un composant peut donner procuration à ses enfants pour modifier son `state`
-- Le `state` doit être placé sur le plus proche ancêtre commun à tous les composants qui le nécessitent
+- Changer l'état se fait en utilisant `setX` fourni par `const [x, setX] = useState()`
+- Utiliser `setX` met à jour l'état et déclenche le rendu de l'instance
+- Modifier l'état sans passer par `setX` ne fait rien
+- En général on utilise modifie l'état en réaction à des évènements
+- Ne jamais utiliser `setX` à la racine d'un composant
+
+---
 
 ## Exercices
 
-1. > Faire une méthode de classe de la fonction `displayName` de `Pokemon`
+1) Ajouter un `<button />` dans `House` permettant d'augmenter les `points` de chaque `House`
+2) Ajouter un `<button />` qui permet de réinitialiser les `points` de chaque `House` à `0`
+3) Ajouter un `<button />` dans `House` qui permet d'inverser l'état `open`
+4) Afficher les `<Student />` dans `House` uniquement si `open` est `true`
+5) Augmenter l'`exp` de chaque `Student` au `mousemove` sur l'élément principal du composant
 
-2. > Ajouter un `state` au composant `TrainedPokemon`, qui représente son expérience
+---
 
-3. > Afficher l'expérience du `<TrainedPokemon>`
-
-4. > Au `mousemove` sur un `<TrainedPokemon>`, faire évoluer son `state` pour lui donner l'expérience
-
-5. > Créer un composant `<Filters>` affichant un `<button>` permettant d'afficher seulement les `<Pokemon>` de `<PokemonList>` de type `electric`
-
-- Bien réfléchir à l'endroit où doit être défini le `state` correspondant
-- On doit pouvoir réafficher tous les `<Pokemon>` en recliquant dessus
-- Utiliser `pokemon.types.find()` pour vérifier si un Pokémon possède un type
-
-6. > Styliser le `<button>` en fonction de si le filtre est actif ou non
-
-## à suivre: [`Cycle de vie`](./3_cycle_de_vie.md)
+### à suivre: [Comprendre l'état](./3_behaviour.md)

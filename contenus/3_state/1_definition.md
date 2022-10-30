@@ -39,7 +39,7 @@ function Counter() {
 ```
 
 `useState` est un peu particulier à utiliser. **`useState` est une fonction qui renvoie un tableau**, contenant 2 éléments:
-- le premier est l'état
+- le premier est la valeur actuelle de l'état
 - le second est la fonction permettant de mettre à jour cet état
 
 ```jsx
@@ -62,21 +62,23 @@ Il est possible, et souvent nécessaire, d'avoir plusieurs états dans le même 
 import React, { useState } from 'react';
 
 function Potager() {
+  const [name, setName] = useState('Le potager de Romain');
   const [carottes, setCarottes] = useState(4);
   const [patates, setPatates] = useState(7);
-  const [navets, setNavets] = useState(5);
 
   return (
-    <ul>
-      <li>{carottes}</li>
-      <li>{patates}</li>
-      <li>{navets}</li>
-    </ul>
+    <div>
+      <h1>{name}</h1>
+      <ul>
+        <li>{carottes}</li>
+        <li>{patates}</li>
+      </ul>
+    </div>
   );
 }
 ```
 
-Il est possible de définir plusieurs états dans un objet, mais c'est en général déconseillé.
+Il est possible de définir plusieurs états dans un objet, mais c'est en général déconseillé, à moins que les données aient du sens ensemble.
 
 ```jsx
 // Ne faites pas ça
@@ -84,6 +86,12 @@ const [potager, setPotager] = useState({
   carottes: 4,
   patates: 7,
   navets: 5
+});
+
+// Dans ce cas c'est pertinent
+const [coords, setCoords] = useState({
+  lat: 44.8637178,
+  lon: -0.586012
 });
 ```
 
@@ -97,21 +105,15 @@ const [potager, setPotager] = useState({
 - Déclarer un `state` se fait avec la fonction `useState`
 - `useState` nous renvoie l'état courant du `state`, ainsi qu'une fonction pour le modifier, le tout dans un tableau
 - On peut définir plusieurs états dans un composant en utilisant plusieurs fois `useState`
+- Groupez plusieurs états dans un objet lorsque les valeurs ont du sens ensemble
 
 ---
 
 ## Exercices
 
-1) Donner un état `points` au composant `House`, l'initialiser à `0`
+1) Donner une expérience `exp` au composant `Student`, l'initialiser à `0`
 2) Donner un état `open` au composant `House`, l'initialiser à `false`
-3) Donner une expérience `exp` au composant `Student`, l'initialiser à `0`
 
 ---
 
 ### à suivre: [Mettre à jour l'état](./2_setState.md)
-
-
-
-
-
-
