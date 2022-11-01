@@ -24,7 +24,7 @@ Autrement dit, deux situations provoquent donc le `render`:
 
 ## Déclaration de l'état
 
-Pour pouvoir utiliser du `state`, il faut utiliser le hook `setState`, qui s'importe depuis `react`.
+Pour pouvoir utiliser du `state`, il faut utiliser le hook [`useState`](https://fr.reactjs.org/docs/hooks-reference.html#usestate), qui s'importe depuis `react`.
 
 > On verra un peu plus tard ce qu'est un hook.
 

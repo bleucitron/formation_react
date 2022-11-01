@@ -141,4 +141,4 @@ On va faire Poudlard !
 
 ---
 
-### à suivre: [La boucle de rendu](./2_render.md)
+### à suivre: [Les `props`](./2_props.md)

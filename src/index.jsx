@@ -1,22 +1,27 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 
 const appRoot = ReactDOM.createRoot(document.getElementById('root'));
 
-function MonFormulaire() {
-  const [value, setValue] = useState('Romain');
+function Time() {
+  const [count, setCount] = useState(0);
 
-  function updateValue(e) {
-    setValue(e.target.value);
-  }
+  useEffect(() => {
+    console.log('effect', count);
 
+    return () => console.log('clean effect', count);
+  }, [count]);
+
+  return <div onClick={() => setCount(c => c + 1)}>{count}</div>;
+}
+
+function App() {
   return (
-    <form>
-      <textarea value={value} onInput={updateValue} />
-      <p>Vous vous appelez {value}.</p>
-    </form>
+    <div>
+      <Time />
+    </div>
   );
 }
 
-appRoot.render(<MonFormulaire />);
+appRoot.render(<App />);

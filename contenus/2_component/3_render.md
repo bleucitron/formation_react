@@ -62,4 +62,4 @@ Si une instance disparaît du DOM virtuel à la suite d'un `render`, on dit qu'e
 
 ---
 
-## à suivre: [`State`](./2_state.md)
+## à suivre: [Rendu conditionnel](./4_conditional_rendering.md)

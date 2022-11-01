@@ -101,4 +101,4 @@ function MesAmis(props) {
 
 ---
 
-### à suivre: [`Évènements`](./5_events.md)
+### à suivre: [Évènements](./6_events.md)

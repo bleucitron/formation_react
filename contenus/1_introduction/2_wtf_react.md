@@ -35,4 +35,4 @@ React a été développé pour répondre à ces problématiques.
 
 ---
 
-### à suivre: [Principes](./3_principes.md)
+### à suivre: [Principes](./3_concepts.md)

@@ -99,4 +99,4 @@ const data = {
 
 ---
 
-### à suivre: [`Rendu conditionnel`](./3_conditional_rendering.md)
+### à suivre: [`Boucle de rendu`](./3_render.md)

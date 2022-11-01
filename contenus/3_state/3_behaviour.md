@@ -141,4 +141,4 @@ Pour résumer, **si une mise à jour d'état dépend de l'état précédent, il 
 
 ---
 
-### à suivre: [Zone d'influence](./4_influence_zone.md)
+### à suivre: [Structure](./4_structure.md)

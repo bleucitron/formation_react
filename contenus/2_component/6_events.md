@@ -76,4 +76,4 @@ Cela aura particulièrement de l'importance lors du chapitre sur l'état.
 
 ---
 
-### à suivre: [`Dev tools`](./6_devtools.md)
+### à suivre: [Dev tools](./7_devtools.md)

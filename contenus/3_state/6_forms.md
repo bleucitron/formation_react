@@ -138,7 +138,6 @@ function Form() {
 }
 ```
 
-
 ---
 
 ## TL;DR
@@ -154,9 +153,12 @@ function Form() {
 ## Exercices
 
 
-1. Ajouter à notre `App` un formulaire permettant d'ajouter un nouvel élève à `students` (seulement `name` et `familyName`)
+1. Ajouter à notre `App` un formulaire permettant d'ajouter un nouvel élève à `students` en utilisant:
+  - un `input` texte pour `name`
+  - un `input` radio pour `ancestor` avec les choix suivants: `half-blood`, `muggleborn`, `pure-blood`
 2. Créer un composant `Hat`, qui affiche la liste des noobs, et permet de leur assigner une `house`
+3. Faire en sorte de pouvoir supprimer un élève de sa `House`, il doit redevenir noob
 
 ---
 
-### à suivre: [Hooks](../4_hooks/index.md)
+### à suivre: [Les effets](../4_effects/index.md)

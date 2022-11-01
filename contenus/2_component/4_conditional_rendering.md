@@ -67,11 +67,13 @@ function Personne(props) {
     <div>
       <div>Youpi, je m'appelle {props.nom} !</div>
       <div>J'ai {props.age} ans.</div>
-      { old }
+      {old}
     </div>
   );
 }
 ```
+
+> On peut aussi écrire le rendu conditionnel `props.age > 100 && old`.
 
 ---
 
@@ -89,4 +91,4 @@ function Personne(props) {
 
 ---
 
-### à suivre: [`Tableaux`](./4_lists.md)
+### à suivre: [Tableaux](./5_lists.md)
