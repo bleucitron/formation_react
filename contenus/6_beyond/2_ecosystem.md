@@ -19,13 +19,14 @@ Depuis sa création, la communauté n'a cessé de croître, amenant régulièrem
 
 ## Meta-frameworks
 
-C'est quoi ?
+React n'est qu'un framework de composants. Il ne fournit pas d'opinion sur ce que devrait être une application web.
+Un *meta-framework*, ou *framework d'application* nous fournit tous les outils pour créer une application web digne de ce nom avec React.
 
 - [Next](https://nextjs.org/)
 - [Remix](https://remix.run/)
 - [Gatsby](https://www.gatsbyjs.com/)
 
-## Concurrents
+## Frameworks concurrents
 
 Avec JSX
 

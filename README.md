@@ -41,7 +41,6 @@
 - [Le contexte](./contenus/5_hooks/2_context.md)
 - [Optimisations](./contenus/5_hooks/3_optimisations.md)
 - [Autres hooks](./contenus/5_hooks/4_other.md)
-- [Hooks personalisés](./contenus/5_hooks/5_custom.md)
 
 ## 6) Vers l'infini et au-delà
 

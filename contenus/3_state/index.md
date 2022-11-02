@@ -10,8 +10,12 @@
 - [Zone d'influence](./5_influence_zone.md)
 - [Formulaires](./6_forms.md)
 
-<!-- Legacy: [L'état pour les composants classes](./X_classes.md) -->
+Legacy:
+- [L'état pour les composants classes](./X1_state.md)
+- [Le cycle de vie pour les composants classes](./X2_lifecycle.md)
+- [D'autres choses pour les composants classes](./X3_extras.md)
 
 ### 4) [Les effets](../4_effects/index.md)
 ### 5) [Les hooks](../5_hooks/index.md)
 ### 6) [Aller plus loin](../6_beyond/index.md)
+

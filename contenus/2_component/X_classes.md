@@ -1,4 +1,4 @@
-# Le composant classe de base
+# [Nul] Le composant classe de base
 
 **Un composant est une fonction, qui, à partir de données, crée des instances de composant**.
 
@@ -102,31 +102,3 @@ class MonComposant extends React.Component {
 - On accède aux `props` via `this.props`, qui renvoie un objet
 - Lorsqu'on affiche plusieurs instances dans un tableau, il faut fournir une `key` unique par élément
 
-## Exercices
-
-1. > Créer un composant `Trainer` dans un fichier `Trainer.jsx`. Il doit recevoir comme `props` un `name` et une `address`, et les afficher à l'écran
-
-2. > Utiliser ce composant à la place du `<div className='Trainer'>` existant
-
-3. > Créer un composant `App` dans un fichier `App.jsx`. Ce composant devient la racine de notre application.
-
-- `App` affiche tous les `<Pokemon>` dans un `<ul>`, ainsi que le `<Trainer>`
-- C'est lui que `ReactDOM.render` utilise
-
-4. > Modifier `App` pour qu'il accepte `data` en `props`. Il doit la recevoir de `index.jsx`
-
-- Vous pouvez importer la donnée dans `index.jsx` avec `import data from './_data/pokemon.json';`
-- `App` crée une liste de `<Pokemon>` à partir de la liste fournie par sa `props` `data`
-- Chaque `<Pokemon>` reçoit 3 `props`: `name`, `weight`, et `src` qui est l'image du Pokémon (`pokemon.sprites.front_default`)
-
-5. > Créer un composant `PokemonList`, qui prend une liste de Pokémons `pokemons` en `props`, et affiche tous les `<Pokemon>`
-
-6. > Utiliser `<PokemonList>` à la place du `<ul>` existant dans `<App>`
-
-7. > Créer un composant `TrainedPokemon` sur la base de `Pokemon`.
-
-- Les `<TrainedPokemon>` sont les Pokémons que le dresseur a attrapé, tandis que les `<Pokemon>` sont tous les Pokemons existants
-
-8. > Faire en sorte que le `<Trainer>` affiche le premier Pokémon en tant que `<TrainedPokemon>`, qui est son premier Pokémon
-
-## à suivre: [`State`](./2_state.md)

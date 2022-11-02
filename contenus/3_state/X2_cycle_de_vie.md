@@ -1,4 +1,4 @@
-# Le cycle de vie
+# [Nul] Le cycle de vie avec les classes
 
 Les composants React ont un cycle de vie, qui permet d'intervenir à différents bien spécifiques de la vie d'une instance:
 

@@ -1,4 +1,4 @@
-# Extras
+# [Nul] Extras avec les classes
 
 ## Composants stateless fonctionnels
 
@@ -171,12 +171,3 @@ _Des librairies de gestion d'état comme Redux permettent de résoudre ce probl�
 - Les formulaires en React sont en général controlés, c'est-à-dire que le comportement est entièrement dicté par React
 - On peut utiliser des `refs` pour manipuler le DOM directement, mais il faut plutôt éviter
 - On peut utiliser le Contexte pour définir des données globales, mais il faut plutôt éviter
-
-## Exercices
-
-1. > Utiliser des composants fonctionnels lorsque c'est possible et pertinent
-2. > Utiliser des `setState()` fonctionnels lorsque c'est possible et pertinent
-3. > Utiliser des optimisations lorsque c'est possible et pertinent
-4. > Utiliser un `input` pour donner un surnom modifiable à chaque `<TrainedPokemon>`
-
-## À suivre: [Les Hooks](../3_hooks/1_classes_suck.md)

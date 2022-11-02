@@ -9,7 +9,6 @@
 - [Le contexte](./2_context.md)
 - [Optimisations](./3_optimisations.md)
 - [Autres hooks](./4_other.md)
-- [Hooks personalisés](./5_custom.md)
 
 ### 6) [Aller plus loin](../6_beyond/index.md)
 
