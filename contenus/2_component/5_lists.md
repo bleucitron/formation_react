@@ -97,7 +97,8 @@ function MesAmis(props) {
 ## Exercices
 
 1) Donner une prop `students` à `House`
-2) Instancier chacune des `<House />` avec les bons étudiants, en se servant de `data/students.json`
+2) Importer la `data` depuis `_data/harrypotter.json`
+2) Instancier chacune des `<House />` avec les bons étudiants, `data`
 
 ---
 

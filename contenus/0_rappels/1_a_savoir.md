@@ -110,4 +110,4 @@ export default function () {}
 
 ---
 
-### à suivre: [React](../1_introduction/1_origines.md)
+### à suivre: [React](../1_introduction/1_origin.md)
