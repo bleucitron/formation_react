@@ -72,7 +72,7 @@ Cela aura particulièrement de l'importance lors du chapitre sur l'état.
 
 ## Exercices
 
-1) Ajouter un listener au clic sur l'élément principal de `Student` pour afficher l'acteur ou l'actrice
+1) Ajouter un listener au clic sur l'élément principal de `Student` pour afficher en `alert` le nom de l'acteur ou l'actrice
 
 ---
 

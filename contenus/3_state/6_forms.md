@@ -156,6 +156,10 @@ function Form() {
 1. Ajouter à notre `App` un formulaire permettant d'ajouter un nouvel élève à `students` en utilisant:
   - un `input` texte pour `name`
   - un `input` radio pour `ancestor` avec les choix suivants: `half-blood`, `muggleborn`, `pure-blood`
+Le bouton pour ajouter un élève 100% aléatoire doit toujours être là.
+
+> Vous pouvez utiliser `getNoob` en donnant 2 arguments: `name` et `ancestry` (0, 1, ou 2): `getNoob("Paul Smith", 0)`
+
 2. Créer un composant `Hat`, qui affiche la liste des noobs, et permet de leur assigner une `house`
 3. Faire en sorte de pouvoir supprimer un élève de sa `House`, il doit redevenir noob
 

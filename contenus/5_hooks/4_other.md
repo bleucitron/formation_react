@@ -53,5 +53,7 @@ function Point() {
 ## Exercices
 
 1. Créer un hook personnalisé `useExp` permettant de faire augmenter un state d'`exp` toutes les secondes.
+2. Utiliser ce hook sur un composant de votre choix
+___
 
-## À suivre: [Vers l'infini et au-delà](../6_beyond/index.md)
+### À suivre: [Vers l'infini et au-delà](../6_beyond/index.md)

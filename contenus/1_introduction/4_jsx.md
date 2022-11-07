@@ -183,4 +183,4 @@ On recommande souvent l'utilisation de [coloration syntaxique adaptée](https://
 
 ---
 
-### à suivre: [Let's go Pikachu !](./5_lets_go.md)
+### à suivre: [*Accio !* !](./5_lets_go.md)

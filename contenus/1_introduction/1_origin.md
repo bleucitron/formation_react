@@ -37,6 +37,7 @@ Depuis, plusieurs projets similaires sont apparus, comme Vue, ou ont évolués. 
 Quelques uns de ces projets commencent même à remettre en cause certains piliers de la philosophie React. Svelte est le plus connu d'entre eux.
 
 - [Svelte](https://svelte.dev/) (2016)
+- [SolidJS](https://www.solidjs.com/) (2019)
 
 ---
 

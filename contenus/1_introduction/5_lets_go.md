@@ -1,8 +1,8 @@
-# Let's go Pikachu !
+# *Accio* !
 
 On va commencer à manipuler nos premiers composants React.
 
-Tous les exercices de cette formation sont un seul et même projet fil rouge, dont l'objectif est de construire un Pokédex.
+Tous les exercices de cette formation sont un seul et même projet fil rouge, dont l'objectif est de construire Poudlard.
 
 Mais avant tout, il faut avoir conscience de l'environnement de travail dans lequel on se trouve.
 
@@ -55,12 +55,14 @@ npm run dev # démarre le serveur de développement
 > Ouvrir le fichier `src/index.jsx`
 
 ```jsx
-import React from 'react'; // les composants, ainsi que la syntaxe JSX
-import ReactDOM from 'react-dom'; // DOM virtuel
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 
-const pokemon = <div>Pikachu</div>;
+const appRoot = ReactDOM.createRoot(document.getElementById('root'));
 
-ReactDOM.render(pokemon, document.getElementById('root'));
+const myApp = <div>Harry</div>;
+appRoot.render(myApp);
+
 ```
 
 Dans cet exemple, on fait 3 choses:
@@ -97,23 +99,21 @@ _Create-React-App impose un système de fichiers particulier, et discutable, not
 
 1. > Donner une classe 'name' au `<div>`
 
-2. > Mettre le `<div>` dans un `<li>`, et donner au `<li>` une classe 'Pokemon'
+2. > Mettre le `<div>` dans un `<li>`, et donner au `<li>` une classe 'Student'
 
-3. > Rajouter une `<div>` affichant le poids du pokémon
+3. > Rajouter une `<div>` affichant la date de naissance
 
-4. > Ajouter un listener au clic sur le `<li>` permettant d'afficher le nom du Pokémon dans la console quand on clique dessus
+4. > Ajouter un listener au clic sur le `<li>` permettant d'afficher le nom de la personne en `alert` quand on clique dessus
 
-- Utiliser `console.log()`
+- Utiliser `alert()`
 
-5. > Ajouter un 2e pokemon, en dupliquant le code du premier, et mettre les 2 dans un `<ul>`
-
-6. > Ajouter un `<div>` en frère du `<ul>`. Ce `<div>` représente le dresseur de Pokémons et doit avoir un classe `Trainer`. Il doit afficher un `name` et une `address`. Le `div` et le `ul` doivent avoir un parent commun
+5. > Ajouter un 2e étudiant, en dupliquant le code du premier, et mettre les 2 dans un `<ul>`
 
 ### Composants personnalisés
 
-7. > Importer dans le fichier `index.jsx` le composant `Pokemon` depuis son fichier
+7. > Importer dans le fichier `index.jsx` le composant `Student` depuis son fichier
 
-8. > Utiliser ce composant pour afficher les pokemons, en leur passant les données `name` et `weight` en "attribut"
+8. > Utiliser ce composant pour afficher les étudiants, en leur passant les données `name` et `birthdate` en "attribut"
 
 ---
 

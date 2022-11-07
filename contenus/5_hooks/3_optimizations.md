@@ -91,6 +91,8 @@ function Parent(props) {
 
 ## Exercices
 
-1.
+1. Calculer la liste des noms des `House` à partir de `students`, et optimiser son calcul
 
-## À suivre: [Autres hooks](./4_other.md)
+---
+
+### À suivre: [Autres hooks](./4_other.md)

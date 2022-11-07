@@ -95,4 +95,4 @@ La 2ème règle est particulièrement importante, car, les hooks n'ayant pas de 
 
 ---
 
-## À suivre: [Contexte](./2_context.md)
+### À suivre: [Contexte](./2_context.md)

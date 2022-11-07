@@ -124,4 +124,4 @@ Les évènements sont souvent déclenchés "manuellement" par l'utilisateur, en 
 
 ---
 
-## À suivre: [Les hooks](../5_hooks/index.md)
+### À suivre: [Les hooks](../5_hooks/index.md)

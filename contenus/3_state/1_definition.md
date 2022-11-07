@@ -112,7 +112,8 @@ const [coords, setCoords] = useState({
 ## Exercices
 
 1) Donner une expérience `exp` au composant `Student`, l'initialiser à `0`
-2) Donner un état `open` au composant `House`, l'initialiser à `false`
+2) Donner des points `points` au composant `House`, l'initialiser à `0`
+3) Donner un état `open` au composant `House`, l'initialiser à `false`
 
 ---
 

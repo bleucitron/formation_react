@@ -78,7 +78,9 @@ Voici quelques cas classiques d'utilisation de contexte:
 
 ## Exercices
 
-1. Ajouter un `<button>` à l'`App` permettant de changer un state `lang`
+1. Ajouter un `<button>` à l'`App` permettant de changer un state `lang` de `en` à `fr`
 2. Utiliser le contexte ainsi que le fichier `data/fr.json` pour traduire les noms des `House` si la `lang` est `fr`
 
-## À suivre: [Optimisations](./3_optimizations.md)
+---
+
+### À suivre: [Optimisations](./3_optimizations.md)

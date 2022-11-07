@@ -136,8 +136,8 @@ Pour résumer, **si une mise à jour d'état dépend de l'état précédent, il 
 
 1) Utiliser l'écriture fonctionnelle sur les mises à jour d'état qui le nécessitent
 2) Donner un état `noobs` à `App`, et l'initialiser à `[]`
-3) Afficher les noms des `noobs` dans un `<ul>` de `App`
-4) Prévoir un `<button />` dans `App` permettant d'ajouter une personne dans `noobs`, en utilisant l'utilitaire `getNoob`
+3) Prévoir un `<button />` dans `App` permettant d'ajouter une personne dans `noobs`, en utilisant l'utilitaire `getNoob`
+4) Afficher les noms des `noobs` dans un `<ul>` de `App`
 
 ---
 

@@ -103,4 +103,4 @@ useEffect(() => {
 
 1. Nettoyer l'intervalle qui met à jour l'`exp` de `Student`
 
-## À suivre: [Vous utilisez mal les effets](./3_misusage.md)
+### À suivre: [Vous utilisez mal les effets](./3_misusage.md)

@@ -152,4 +152,4 @@ function Item(props) {
 
 ---
 
-### à suivre: [`Formulaires`](./6_forms.md)
+### à suivre: [Formulaires](./6_forms.md)

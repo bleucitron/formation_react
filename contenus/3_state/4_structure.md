@@ -120,7 +120,7 @@ Dans la mesure du possible, préférer les structures plates, quitte à séparer
 
 ## Exercices
 
-1. Remplacer l'état `noobs` de `App` par un état `students`. Les `students` sans `house` sont des les noobs
+1. Remplacer l'état `noobs` de `App` par un état `students`. Les `students` sans `house` sont des noobs
 2. Modifier le code pour récupérer les noobs à partir de `students`
 
 ---

@@ -3,5 +3,5 @@ import ReactDOM from 'react-dom/client';
 
 const appRoot = ReactDOM.createRoot(document.getElementById('root'));
 
-const basic = <div>Harry</div>;
-appRoot.render(basic);
+const myApp = <div>Harry</div>;
+appRoot.render(myApp);
