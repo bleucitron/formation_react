@@ -1,4 +1,4 @@
-### 1) [Introdution](../1_introduction/index.md)
+### 1) [Introduction](../1_introduction/index.md)
 
 # 2) Composants
 

@@ -1,4 +1,4 @@
-### 1) [Introdution](../1_introduction/index.md)
+### 1) [Introduction](../1_introduction/index.md)
 ### 2) [Les composants](../2_component/index.md)
 ### 3) [Le `state`](../3_state/index.md)
 
