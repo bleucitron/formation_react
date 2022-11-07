@@ -1,0 +1,46 @@
+.friend {
+  color: red;
+}
+
+.App {
+  display: flex;
+  padding: 2rem;
+}
+
+.House {
+  width: 30rem;
+}
+
+.House img {
+  width: 10rem;
+}
+
+.House ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.Student {
+  position: relative;
+  width: 10rem;
+  margin-inline: 1rem;
+}
+
+.Student img {
+  width: 100%;
+}
+
+.Student.favorite {
+  color: orange;
+}
+
+.Student .favorite {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2rem;
+  height: 2rem;
+  background-color: orange;
+  border-radius: 50%;
+}
