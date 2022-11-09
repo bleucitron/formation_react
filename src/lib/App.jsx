@@ -1,19 +1,34 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import getNoob from './getNoob';
 
 import House from './House';
-import Noob from './Noob';
+import Hat from './Hat';
 import NoobForm from './NoobForm';
-import studentData from './../_data/harrypotter.json';
+import Lang from './Lang';
+import Layout from './Layout';
 import houseData from './../_data/houses.json';
+import { LangContext } from './contexts';
 
 export default function App() {
-  const [students, setStudents] = useState(studentData);
-  const [selected, setSelected] = useState(); // 'Gryffindor' ou 'Slytherin'
+  const [lang, setLang] = useState('en');
+  const [students, setStudents] = useState([]);
+  const [selected, setSelected] = useState('Gryffindor'); // 'Gryffindor' ou 'Slytherin'
   const [ranking, setRanking] = useState({
-    Gryffindor: 100,
-    Slytherin: 50,
+    Gryffindor: 0,
+    Slytherin: 0,
+    Ravenclaw: 0,
+    Hufflepuff: 0,
   });
+
+  useEffect(() => {
+    fetch('https://hp-api.herokuapp.com/api/characters/students')
+      .then(resp => {
+        return resp.json();
+      })
+      .then(data => {
+        setStudents(data);
+      });
+  }, []);
 
   const noobs = students.filter(s => !s.house);
 
@@ -45,6 +60,15 @@ export default function App() {
       };
     });
   }
+  function assignHouseToNoob(noob, house) {
+    noob.house = house;
+
+    setStudents(s => [...s]);
+  }
+  const toggleLang = useCallback(
+    () => setLang(l => (l === 'en' ? 'fr' : 'en')),
+    [],
+  );
 
   const houseInstances = [...houseData]
     .sort((house1, house2) => {
@@ -61,18 +85,29 @@ export default function App() {
         toggle={() => toggleHouse(name)}
         setPoints={() => setHousePoints(name)}
         resetPoints={() => resetHousePoints(name)}
+        expell={student => assignHouseToNoob(student)}
       />
     ));
 
   return (
-    <div className="App">
-      <NoobForm add={addNoob} />
-      <ul className="noobs">
-        {noobs.map(({ name, image, dateOfBirth }) => (
-          <Noob key={name + dateOfBirth} name={name} avatar={image} />
-        ))}
-      </ul>
-      <div className="houses">{houseInstances}</div>
-    </div>
+    <LangContext.Provider value={lang}>
+      <Layout>
+        <div className="App">
+          <Lang
+            label={lang === 'fr' ? 'To english' : 'To french'}
+            toggle={toggleLang}
+          />
+          <NoobForm add={addNoob} />
+          {noobs.length > 0 && (
+            <Hat
+              noobs={noobs}
+              houses={houseData.map(h => h.name)}
+              assignNoob={assignHouseToNoob}
+            />
+          )}
+          <div className="houses">{houseInstances}</div>
+        </div>
+      </Layout>
+    </LangContext.Provider>
   );
 }

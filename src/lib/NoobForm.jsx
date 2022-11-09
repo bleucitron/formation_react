@@ -3,7 +3,7 @@ import React, { useState, Fragment } from 'react';
 export default function NoobForm(props) {
   const { add } = props;
 
-  const [name, setName] = useState();
+  const [name, setName] = useState('');
   const [ancestry, setAncestry] = useState();
 
   const textButton =

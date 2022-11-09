@@ -4,21 +4,47 @@
 
 ul {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+  margin: none;
+  padding: none;
 }
 
 .App {
   padding: 2rem;
 }
 
-.App .noobs {
+.Hat {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
   gap: 1rem;
 }
 
+.Hat .selector {
+  display: grid;
+  place-content: center;
+  gap: 1rem;
+}
+
 .App .houses {
   display: flex;
+}
+
+.NoobForm {
+  margin-block: 2rem;
+}
+
+.NoobForm input {
+  margin-inline: 1rem;
+}
+
+.houses {
+  margin-block: 3rem;
 }
 
 .House {
@@ -35,29 +61,4 @@ ul {
 .House ul {
   display: flex;
   flex-wrap: wrap;
-}
-
-.Student, .Noob {
-  position: relative;
-  padding-inline: 1rem;
-  margin-inline: 1rem;
-}
-
-.Student img, .Noob img {
-  width: 5rem;
-  border-radius: 50%;
-}
-
-.Student.favorite {
-  color: orange;
-}
-
-.Student .favorite {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 1rem;
-  height: 1rem;
-  background-color: orange;
-  border-radius: 50%;
 }
