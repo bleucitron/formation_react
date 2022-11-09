@@ -44,6 +44,9 @@ function useCoord(x0, y0, z0) {
 
 function Point() {
   const {coords, setX, setY, setZ, setAll} = useCoords(1, 2, 3);
+
+  const {x, y, z} = coords;
+
   return <div>{x} {y} {z}</div>
 }
 ```
