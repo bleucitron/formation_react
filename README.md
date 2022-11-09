@@ -39,7 +39,7 @@
 
 - [Origines](./contenus/5_hooks/1_origin.md)
 - [Le contexte](./contenus/5_hooks/2_context.md)
-- [Optimisations](./contenus/5_hooks/3_optimisations.md)
+- [Optimisations](./contenus/5_hooks/3_optimizations.md)
 - [Autres hooks](./contenus/5_hooks/4_other.md)
 
 ## 6) Vers l'infini et au-delà

@@ -57,7 +57,7 @@ useEffect(() => {
   console.log("L'âge a changé", age);
 }, [age]);
 
-// cet effet sera exécuté lorsque age et addresse change
+// cet effet sera exécuté lorsque age ou address change
 useEffect(() => {
   console.log("L'âge et l'adresse ont changé", age, address);
 }, [age, address]);

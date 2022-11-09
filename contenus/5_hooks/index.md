@@ -7,7 +7,7 @@
 
 - [Origines](./1_origin.md)
 - [Le contexte](./2_context.md)
-- [Optimisations](./3_optimisations.md)
+- [Optimisations](./3_optimizations.md)
 - [Autres hooks](./4_other.md)
 
 ### 6) [Aller plus loin](../6_beyond/index.md)
