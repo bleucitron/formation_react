@@ -82,14 +82,14 @@ useEffect(async () => {
 
 ```jsx
 // Option 1
-useEffect(async () => {
+useEffect(() => {
   fetchData().then(data => setData(data));
 }, []);
 ```
 
 ```jsx
 // Option 2
-useEffect(async () => {
+useEffect(() => {
   async function getData() {
     const data = await fetchData();
     setData(data);
