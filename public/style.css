@@ -50,10 +50,13 @@ li {
 .House {
   display: flex;
   flex-flow: column;
-  align-ite
-  console.log(griffondorStudents);rem;
+  align-items: center;
+  width: 30rem;
 }
 
+.House img {
+  width: 10rem;
+}
 .House ul {
   display: flex;
   flex-wrap: wrap;
