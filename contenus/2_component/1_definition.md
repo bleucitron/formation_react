@@ -125,7 +125,7 @@ Il est toutefois indispensable d'avoir dans certains cas des composants *impurs*
 - Le nom d'un composant doit commencer par une majuscule
 - On peut définir plusieurs composants dans le même fichier
 - On peut importer/exporter des composants
-- Un composant doit renvoyer
+- Un composant doit renvoyer un seul element, ou un fragment
 - Dans l'idéal, un composant construira toujours la même UI à partir des mêmes données
 
 ---
@@ -134,7 +134,7 @@ Il est toutefois indispensable d'avoir dans certains cas des composants *impurs*
 
 On va faire Poudlard !
 
-1) Faire un composant `Student` dans un fichier `Student.jsx`, qui affiche un nom, un prénom et une image.
+1) Modifier le composant `Student` dans le fichier `Student.jsx`, pour qu'il affiche le nom, la date de naissance et l'image.
 2) Faire un composant `House` dans un fichier `House.jsx`, qui affiche un nom d'école, une image d'école, ainsi que votre `<Student />`
 3) Faire un composant `App` dans un fichier `App.jsx`, qui contient 1 `<House>`
 4) Utiliser `<App />` comme composant racine de notre application dans `index.jsx`
