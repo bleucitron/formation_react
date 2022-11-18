@@ -1,0 +1,18 @@
+[
+  {
+    "name": "Gryffindor",
+    "logo": "https://imgs.search.brave.com/JMOLeeeHJHiwHXdurTRBGxakgRsQG7Stkqy6-tj2h3I/rs:fit:947:1181:1/g:ce/aHR0cHM6Ly92aWdu/ZXR0ZS53aWtpYS5u/b2Nvb2tpZS5uZXQv/aG9nd2FydHMtbXlz/dGVyeS9pbWFnZXMv/ZC9kYi80Njc5MDQ5/N19tYXguanBnL3Jl/dmlzaW9uL2xhdGVz/dD9jYj0yMDE5MDkx/MTE5MTkyOSZwYXRo/LXByZWZpeD1kZQ"
+  },
+  {
+    "name": "Slytherin",
+    "logo": "https://imgs.search.brave.com/5wevdYfu3Enpm5SINpp7nkmH48svutJYjq9NkA5j3XA/rs:fit:512:608:1/g:ce/aHR0cHM6Ly9jZG4x/MS5iaWdjb21tZXJj/ZS5jb20vcy15ZHJp/Y3prL2ltYWdlcy9z/dGVuY2lsLzYwOHg2/MDgvcHJvZHVjdHMv/ODgzNjIvOTExMjcv/SGFycnktUG90dGVy/LVNseXRoZXJpbi1D/cmVzdC1PZmZpY2lh/bC13YWxsLW1vdW50/ZWQtY2FyZGJvYXJk/LWN1dG91dC1idXkt/bm93LWF0LXN0YXJf/XzMxOTIwLjE1MDc2/NDA0OTcuanBnP2M9/Mg"
+  },
+  {
+    "name": "Hufflepuff",
+    "logo": "https://imgs.search.brave.com/LTRbBtpo6_YcVa4L_XFTw3JlHwPIgK76tAq2299qVCE/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/ZW1waXJlcG9zdGVy/LmRlL2JpbGRlci9i/aWxkZXJfbC83Nzg3/ODkuanBn"
+  },
+  {
+    "name": "Ravenclaw",
+    "logo": "https://imgs.search.brave.com/qWZqc1oIwiNr11f26ijxChwizSo8gwBofvlr2S3yYUk/rs:fit:909:1117:1/g:ce/aHR0cHM6Ly9pbWFn/ZXMtbmEuc3NsLWlt/YWdlcy1hbWF6b24u/Y29tL2ltYWdlcy9J/LzcxSWdweElFLWNM/Ll9BQ19TTDExNjJf/LmpwZw"
+  }
+]

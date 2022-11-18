@@ -57,6 +57,7 @@ li {
 .House img {
   width: 10rem;
 }
+
 .House ul {
   display: flex;
   flex-wrap: wrap;
@@ -87,4 +88,9 @@ li {
   height: 1rem;
   background-color: orange;
   border-radius: 50%;
+}
+
+.active {
+  background: black;
+  color: white;
 }

@@ -1,17 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
 import Student from './Student';
 
+import trad from '../_data/fr.json';
+
+import { LangContext } from './contexts';
+
 export default function House(props) {
-  const { name, logo, students, open, toggle } = props;
+  const {
+    name,
+    logo,
+    first,
+    students,
+    open,
+    toggle,
+    points,
+    givePoints,
+    resetPoints,
+  } = props;
 
-  const [points, setPoints] = useState(0);
-
-  function givePoints() {
-    setPoints(prevPoints => prevPoints + 10);
-  }
-  function resetPoints() {
-    setPoints(0);
-  }
+  const lang = useContext(LangContext);
 
   const instances = students.map(student => (
     <Student
@@ -24,7 +31,8 @@ export default function House(props) {
 
   return (
     <div className="House">
-      <div className="name">{name}</div>
+      {first ? <div>Leader</div> : null}
+      <div className="name">{lang === 'fr' ? trad[name] : name}</div>
 
       <img src={logo} alt={name} />
       <button onClick={givePoints}>Give points</button>
