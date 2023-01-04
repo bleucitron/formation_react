@@ -6,7 +6,7 @@ Le fonctionnement de React est basé sur 2 phases:
 
 ## La phase `render`
 
-Si React détecte qu'une donnée a changé dans une branche de l'arbre de composant, il va déclencher le rendu de tous les composants concerné.
+Si React détecte qu'une donnée a changé dans une branche de l'arbre de composant, il va déclencher le rendu de tous les composants concernés.
 
 Ce qu'on appelle le *rendu* est en réalité le rendu virtuel, c'est-à-dire la mise à jour du DOM virtuel.
 

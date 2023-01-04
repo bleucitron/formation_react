@@ -31,7 +31,7 @@ const PersonneOpti = React.memo(Personne); // version optimisé de Personne
 
 Parfois, certains calculs au sein d'un composant sont lourds, et on veut éviter de les refaire systématiquement. On a déjà évoqué ce cas dans le chapitre sur les effets.
 
-Dans le cas ci-dessous, s'il n'y a que `z` qui change, le `<Composant>` est re-rendu, et donc le `calculLourd` également, alors qu'il n'y a pas besoin vu que `x` et `y` n'ont pas changé.
+Dans le cas ci-dessous, même s'il n'y a que `z` qui change, le `<Composant>` est re-rendu, et donc le `calculLourd` également, alors qu'il n'y a pas besoin vu que `x` et `y` n'ont pas changé.
 
 ```jsx
 function Composant(props) {

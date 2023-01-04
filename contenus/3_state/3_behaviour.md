@@ -126,7 +126,7 @@ Pour résumer, **si une mise à jour d'état dépend de l'état précédent, il 
 - L'état d'une instance est persisté au fur et à mesure des `render`
 - Si une instance est démontée, son état est réinitialisé
 - `render` n'est déclenché que si l'adresse de la nouvelle valeur est différence de la précédente
-- muter ne sert à rien
+- Muter ne sert à rien
 - Les mises à jour d'état sont effectuées par paquets, et sont donc asynchrones
 - Si une mise à jour d'état dépend de l'état précédent, utiliser l'écriture fonctionnelle de `setX`
 

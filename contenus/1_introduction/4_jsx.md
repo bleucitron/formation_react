@@ -31,6 +31,8 @@ Mais ce n'est pas du Javascript standard. Les navigateurs ne sont pas capables d
 
 C'est le rôle d'outils de développement comme [Babel](https://babeljs.io/).
 
+> Lors de la compilation du JSX vers JS, [la plupart des caractères potentiellement dangereux](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-in-html) sont échappés pour éviter certaines attaques XSS.
+
 En observant le code produit par la compilation de JSX, on comprend mieux que **le JSX représente des objets JS**.
 
 ```jsx
@@ -153,12 +155,6 @@ const me = (
 
 Un Fragment n'aura aucune existence dans le DOM réel, il ne sert à React que pour organiser les instances.
 
-## Attaques d'injection
-
-Par défault, JSX [échappe les caractères potentiellement dangereux](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-in-html) lors de la conversion vers du HTML.
-
-Cela contribue à se protéger contre les attaques d'injection de code, type [XSS](https://fr.wikipedia.org/wiki/Cross-site_scripting).
-
 ---
 
 ## TL;DR
@@ -168,7 +164,6 @@ Cela contribue à se protéger contre les attaques d'injection de code, type [XS
 - Le JSX n'est pas du HTML, mais du JS
 - Il est nécessaire de compiler le JSX en JS pur, via des outils comme Babel
 - Du JSX représente des objets JS
-- Le JSX échappe les caractères potentiellement dangereux
 
 Dans du JSX,
 

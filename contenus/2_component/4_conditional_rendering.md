@@ -88,7 +88,7 @@ function Personne(props) {
 1) Ajouter une prop `favorite` à `<Student />`
 2) Si `favorite` est à `true`, afficher une `<div>` qui avec la classe `favorite`
 3) Donner cette prop à un des élèves
-4) Conditionner l'affichage de l'`<img>` de chaque `<Student>` pour ne rien afficher si l'image n'est pour fournie
+4) Conditionner l'affichage de l'`<img>` de chaque `<Student>` pour afficher une image standard si l'image n'est pas fournie
 
 ---
 

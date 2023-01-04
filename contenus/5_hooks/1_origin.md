@@ -43,7 +43,7 @@ Ce genre d'opération est nécessaire avec les composants classes, mais n'apport
 
 ## Enter hooks
 
-L'équipe de React s'est rendue compte qu'en essayant de corriger un de ces problèmes, on ne faisait qu'empirer un autre.
+L'équipe de React s'est rendue compte qu'en essayant de corriger un de ces problèmes, on ne faisait qu'en empirer un autre.
 
 Parce qu'en réalité, ces 3 problèmes ne sont que 3 symptômes du même problème: les classes.
 
@@ -57,7 +57,7 @@ Les hooks permettent de:
 - regrouper la logique similaire dans chaque composant
 - ne pas utiliser de binding
 
-Il également important de comprendre que **les composants classes et fonctionnels peuvent tout à fait coexister** et interagir au sein de la même application React, sans que cela ne crée de problème.
+> Il également important de comprendre que **les composants classes et fonctionnels peuvent tout à fait coexister** et interagir au sein de la même application React, sans que cela ne crée de problème.
 
 ## C'est quoi un hook ?
 
@@ -80,7 +80,7 @@ Pour utiliser correctement un hook, il faut respecter 2 règles:
 
 La 2ème règle est particulièrement importante, car, les hooks n'ayant pas de nom, **React a besoin de toujours exécuter les hooks d'un composant dans le même ordre**, pour éviter de se perdre.
 
-> Notamment, il ne faut mettre un hook dans un `if`.
+> Notamment, il ne faut pas mettre un hook dans un `if`.
 
 ---
 

@@ -8,6 +8,19 @@ Mais avant tout, il faut avoir conscience de l'environnement de travail dans leq
 
 ## Outillage
 
+### IDE et formattage automatique
+
+Il est fortement recommandé d'utiliser un formatteur automatique pour se simplifier la vie lors des développements en général, et avec React en particulier.
+
+Dans VSCode, ceci se fait via
+- Paramètres
+- Taper "format" dans la zone de recherche
+- Cocher "Editor: Format on save"
+
+À chaque sauvegarde, votre éditeur mettra alors automatiquement en forme le code que vous avez écrit.
+
+### Installer un environnement React
+
 Notre projet utilise les modules ES6, et nécessite du _bundling_. De plus, on va utiliser la syntaxe JSX. Il nous faut donc un bundler assisté de Babel.
 
 [Plusieurs options sont disponibles](https://reactjs.org/docs/create-a-new-react-app.html), mais par souci de simplicité, on va utiliser [Vite](https://vitejs.dev/guide/), qui va s'occuper de tout.
@@ -97,23 +110,22 @@ _Create-React-App impose un système de fichiers particulier, et discutable, not
 
 ### Composants standard
 
-1. > Donner une classe 'name' au `<div>`
+1. Donner une classe 'name' au `<div>`
 
-2. > Mettre le `<div>` dans un `<li>`, et donner au `<li>` une classe 'Student'
+2. Mettre le `<div>` dans un `<li>`, et donner au `<li>` une classe 'Student'
 
-3. > Rajouter une `<div>` affichant la date de naissance
+3. Rajouter une `<div>` affichant la date de naissance
 
-4. > Ajouter un listener au clic sur le `<li>` permettant d'afficher le nom de la personne en `alert` quand on clique dessus
+4. Ajouter un listener au clic sur le `<li>` permettant d'afficher le nom de la personne en le loguant quand on clique dessus
+- > Utiliser `console.log()` pour loguer dans la console
 
-- Utiliser `alert()`
-
-5. > Ajouter un 2e étudiant, en dupliquant le code du premier, et mettre les 2 dans un `<ul>`
+5. Ajouter un 2e étudiant, en dupliquant le code du premier, et mettre les 2 dans un `<ul>`
 
 ### Composants personnalisés
 
-7. > Importer dans le fichier `index.jsx` le composant `Student` depuis son fichier
+7. Importer dans le fichier `index.jsx` le composant `Student` depuis son fichier
 
-8. > Utiliser ce composant pour afficher les étudiants, en leur passant les données `name` et `birthdate` en "attribut"
+8. Utiliser ce composant pour afficher les étudiants, en leur passant les données `name` et `birthdate` en "attribut"
 
 ---
 

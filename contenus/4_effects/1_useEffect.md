@@ -15,7 +15,7 @@ Ajouter un effet se fait avec le hook `useEffect`.
 **Le hook [`useEffect`](https://fr.reactjs.org/docs/hooks-reference.html#useeffect) prend une fonction en argument, qui sera exécutée après chaque rendu**, après la mise à jour du DOM, que ce rendu soit déclenché par la réception de props ou par la mise à jour d'un état.
 
 ```jsx
-import React, { useEffect, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 
 function Counter(props) {
   const { unit } = props;
@@ -69,9 +69,9 @@ Noter qu'on peut déclarer toute variable en tant que dépendance d'un effet, no
 
 ## Réagir au montage
 
-Le montage d'une instance correspond au moment où l'instance est accrochée dans le DOM virtuel (et donc dans le vrai DOM). Autrement dit, le montage est le premier rendu d'une instance.
+Le montage d'une instance correspond au moment où l'instance est accrochée dans le DOM virtuel (et juste après dans le vrai DOM). Autrement dit, le montage est le premier rendu d'une instance.
 
-**Il est possible de réagir au montage d'une instance avec `useEffect`, en passant une liste de dépendances vide**.
+**Il est possible de réagir au montage d'une instance avec `useEffect`, en passant une liste de dépendances vide `[]`**.
 
 ```jsx
 // cet effet ne réagira qu'au montage du composant
@@ -87,8 +87,8 @@ Réagir au montage d'une instance est en général utilisé pour aller chercher 
 ## TL;DR
 
 - On peut réagir aux `render` avec `useEffect`
-- Il faut déclarer tous les dépendances de `useEffect`
-- On peut réagir au montage en passant une liste de dépendance vide `[]`
+- Il faut déclarer toutes les dépendances de `useEffect`
+- On peut réagir au montage en passant une liste de dépendances vide `[]`
 
 ---
 
@@ -99,6 +99,6 @@ Réagir au montage d'une instance est en général utilisé pour aller chercher 
 const url = 'https://hp-api.herokuapp.com/api/characters/students';
 ```
 
-2. Faire en sorte que l'`exp` d'un `<Student />` augmente toutes les secondes au lieu du `mousemove`
+2. Faire en sorte que l'`exp` d'un `<Student />` augmente toutes les secondes au lieu du `mousemove`, en utilisant `setInterval`
 
 ### À suivre: [Nettoyage](./2_cleanup.md)

@@ -22,7 +22,7 @@ Ces "props" `onEvent` ne sont accessibles que sur les composants standards. Si v
 
 ## Arguments
 
-Si vous avez besoin de passer des arguments aux listeners, vous devez le faire en créeant une fonction intermédiaire, qui invoquera la fonction listener d'origine, avec un argument particulier, selon les besoins.
+Si vous avez besoin de passer des arguments aux listeners, vous devez le faire en créant une fonction intermédiaire, qui invoquera la fonction listener d'origine, avec un argument particulier, selon les besoins.
 
 ```jsx
 function ajouter(name) { // le listener d'origine
@@ -56,7 +56,7 @@ function Enfant(props) {
 }
 ```
 
-C'est alors `<Parent />` qui décide totalement du comportement de la fonction `direBonjour`. L'`<Enfant />` n'a alors aucune conscience de ce que fait cette prop. Il se contente de l'exécuter au click.
+C'est alors `<Parent />` qui décide totalement du comportement de la fonction `direBonjour`. L'`<Enfant />` n'a alors aucune conscience de ce que fait cette prop. Il se contente de l'exécuter (au click dans cet exemple).
 
 Cela aura particulièrement de l'importance lors du chapitre sur l'état.
 
@@ -66,13 +66,13 @@ Cela aura particulièrement de l'importance lors du chapitre sur l'état.
 
 - Les composants standards peuvent écouter des évènements grâce à `onClick`, `onMouseMove`, ...
 - Les composants custom ne peuvent pas écouter d'évènement
-- Un composant parent peut fournir un prop sous forme de fonction à ses enfants, pour que ceux-ci s'en servent en tant que listener
+- Un composant parent peut fournir une prop sous forme de fonction à ses enfants, pour que ceux-ci s'en servent en tant que listener
 
 ---
 
 ## Exercices
 
-1) Ajouter un listener au clic sur l'élément principal de `Student` pour afficher en `alert` le nom de l'acteur ou l'actrice
+1) Ajouter un listener au clic sur l'élément principal de `Student` pour afficher le nom de l'acteur ou l'actrice via `console.log`
 
 ---
 

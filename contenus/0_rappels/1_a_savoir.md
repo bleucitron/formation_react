@@ -79,24 +79,25 @@ x => {
 x => ({ a: x + 1 });
 ```
 
-## Asynchrone
+## Récupérer de la donnée
 
-Les Promesses permettent d'avoir une API simple et complète pour utiliser les comportement asynchrones de Javascript.
+On peut aller chercher de la donnée sur le réseau grâce à `fetch`, qui nous crée une Promesse:
 
 ```js
 const p = fetch(...)
-  .then(result => console.log(result))
+  .then(response => response.json())
+  .then(data => console.log('data', data))
   .catch(e => console.log(e));
-
-const allPs = Promise.all([...]).then(...);
 ```
 
 On peut aussi utiliser la syntaxe `async`/`await` pour consommer des promesses.
 
 ```js
 async function getData() {
-  const myData = await fetch(...);
-  return myData;
+  const response = await fetch(...);
+  const data = await response.json();
+
+  console.log('data', data)
 }
 ```
 

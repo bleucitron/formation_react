@@ -5,7 +5,7 @@ Jusque là, on a parlé de "données", d'"attributs". En réalité, on parle de 
 - **un composant reçoit ses props de son parent**
 - **un composant ne peut pas changer ses props**
 
-En JSX, lorsque l'on passe des "attributs" à une instance de composant, on lui passe en réalité des props. On ne parle jamais d'attributs en React. J'ai utilisé le terme jusque là pour aider à la compréhension de la syntaxe JSX.
+En JSX, lorsque l'on passe des "attributs" à une instance de composant, on lui passe en réalité des props. On ne parle jamais d'attributs en React. On a utilisé le terme jusque là pour aider à la compréhension de la syntaxe JSX.
 
 ```jsx
 <Personne nom="Romain" age={12} malade /> // name et weight sont fournis en props
@@ -40,6 +40,8 @@ On peut toujours essayer de changer les props à l'intérieur d'un composant, ma
 
 Un composant ne peut pas changer ses props, **il se contente de les consommer**.
 
+> Si vous essayez de tout de même changer la valeur d'une prop, React vous affichera un message d'erreur.
+
 ## `className`
 
 Il est courant de fournir un `className` à l'élément racine d'un composant, pour faciliter l'ajout de style aux éléments de ce composant.
@@ -57,7 +59,7 @@ function Personne(props) {
 }
 ```
 
-Noter que, à moins de l'avoir explicitement prévu, donner `className` à une instance de composant personnalisé n'applique pas cette classe au composant.
+Notez que, à moins de l'avoir explicitement prévu, donner `className` à une instance de composant personnalisé n'applique pas cette classe au composant.
 
 ```jsx
 <Personne className='maClasse' /> // ceci ne donne pas par défault une classe à <Personne />

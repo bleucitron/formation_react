@@ -46,8 +46,9 @@ export function MonComposant() {
 // ailleurs
 import { MonComposant } from './MonComposant.jsx'
 ```
+Vous pouvez définir plusieurs composants par fichier, en exporter autant que vous voulez, notamment via `export default`.
 
-> Vous pouvez définir plusieurs composants par fichier, en exporter autant que vous voulez, notamment via `export default`.
+> Il n'est pas nécessaire de nommer votre composant exactement comme le nom du fichier.
 
 ### Valeur de retour
 

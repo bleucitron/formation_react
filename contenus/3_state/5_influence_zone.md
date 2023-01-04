@@ -83,7 +83,7 @@ function Item(props) {
 }
 ```
 
-> Bien réfléchir à la position de chaque état est important pour ne pas avoir à multiplier les refactor de code, mais malgré ça, faire "remonter l'état" est une pratique inévitable quand on développe en React.
+> Bien réfléchir à la position de chaque état est important pour ne pas avoir à multiplier les refactor de code. Mais malgré ça, faire "remonter l'état" est une pratique inévitable quand on développe en React.
 
 ## Procuration
 
@@ -96,7 +96,7 @@ Chaque composant est le seul responsable de son `state`.
 **Un composant peut néanmoins donner procuration à ses enfants pour qu'ils puissent agir sur le `state`**. Le parent donne explicitement le droit à son enfant de modifier son `state`.
 Le parent fournit alors une fonction en tant que `props`, que l'enfant pourra exécuter, sans qu'il soit conscient de ce que cette fonction fait.
 
-Dans l'exemple précédent, notre `List` controlait la sélection de l'`Item`. Mais rien en pratique n'a été prévu pour changer la sélection.
+Dans l'exemple précédent, notre `List` contrôlait la sélection de l'`Item`. Mais rien en pratique n'a été prévu pour changer la sélection.
 Pour que la sélection se déclenche au clic sur chaque `Item`, on peut fournir un prop de procuration, `select`.
 
 ```jsx

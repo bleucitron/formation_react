@@ -1,10 +1,10 @@
 # Le contexte
 
-Au fur et à mesure qu'une application React grandit, le nombre d'étages de composants augmente, et apparaît alors un motif: le *prop drilling*.
+Au fur et à mesure qu'une application React grandit, le nombre d'étages de composants augmente, et apparaît alors un usage: le *prop drilling*.
 
 ## Prop drilling
 
-Plus une application est complexe, plus la probabilité d'avoir besoin de certaines données à des endroits très différents est grande. Cela implique de devoir remonter l'état de plus en plus haut, voire même souvent jusqu'à la racine de l'application.
+Plus une application est complexe, plus la probabilité d'avoir besoin de certaines données à des endroits très différents est grande. Cela implique de devoir remonter l'état de plus en plus haut, voire même souvent jusqu'à la racine de l'application, ce qui donne des applications où tout le state est concentré à la racine.
 
 La conséquence de ce phénomène est qu'il faut redescendre la donnée en tant que `props` sur autant d'étages, ce qui peut devenir fastidieux. C'est ce qu'on appelle le *prop drilling* (le *perçage de props*).
 
@@ -55,7 +55,7 @@ L'idée de passer des `props` de parent à enfant fait partie des principes fond
 
 Notamment, **le contexte ne doit pas servir à réduire le nombre `props` d'un composant**, mais à rendre disponible de la donnée à des endroits très différents de l'application.
 
-De plus utiliser le contexte dans un composant le couple à ce contexte, ce qui le rend inutilisable dans une application n'ayant pas accès à ce contexte.
+De plus, utiliser le contexte dans un composant le couple à ce contexte, ce qui le rend inutilisable dans une application n'ayant pas accès à ce contexte.
 
 Voici quelques cas classiques d'utilisation de contexte:
 - l'internationalisation
@@ -68,7 +68,7 @@ Voici quelques cas classiques d'utilisation de contexte:
 
 ## TL;DR
 
-- Le *prop drilling* est le motif de passer des `props` sur beaucoup d'étages
+- Le *prop drilling* est l'usage de passer des `props` sur beaucoup d'étages
 - On peut éviter le *prop drilling* avec du contexte
 - Le contexte s'utilise avec `createContext`, un `<Provider />`, ainsi que le hook `useContext`
 - Toutes les instances d'un composant utilisant un contexte seront rerendues si la valeur du contexte change

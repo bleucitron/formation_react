@@ -29,6 +29,15 @@ function MesAmis(props) {
 }
 ```
 
+Dans ce cas, c'est comme si j'avais défini `instances` de cette façon:
+```jsx
+ const instances = [
+  <Ami name='Romain' />
+  <Ami name='Élie' />
+  <Ami name='Maggie' />
+ ];
+```
+
 ## La `prop` `key`
 
 Quelle soit la manière dont vous le construisez, si vous utilisez un tableau pour afficher des éléments dans du JSX, vous aurez ce message dans la console:

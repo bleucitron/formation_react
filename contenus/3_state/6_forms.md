@@ -28,17 +28,17 @@ function FormNonControlé() {
 
 > Il est alors nécessaire d'utiliser des *refs* pour accéder au DOM réel, que l'on mentionnera plus tard.
 
-Cette approche s'appelle les **formulaires non controlés**. Elle est similaire à ce que l'on ferait en HTML classique, mais a des inconvénients:
-- il nécessaire de venir chercher les éléments du vrai DOM, ce qui est en général déconseillé
+Cette approche s'appelle les **formulaires non contrôlés**. Elle est similaire à ce que l'on ferait en HTML classique, mais a des inconvénients:
+- il nécessaire de venir manipuler ou lire les éléments du vrai DOM, ce qui est en général déconseillé
 - vous n'avez pas d'accès direct aux mises à jour d'état, il est donc plus fastidieux d'y réagir
 
 ## Formulaires controlés
 
-À l'inverse, il est recommandé dans la plupart des situations d'utiliser des **formulaires controlés**.
+À l'inverse, il est recommandé dans la plupart des situations d'utiliser des **formulaires contrôlés**.
 
 Dans ce cas, l'état de chaque `<input />` va être intégralement géré par React.
 
-Dans le cas précédent, je ne pouvais pas simplement accéder à la valeur de l'`<input />` sans utiliser une *ref*.
+Dans le cas précédent, on ne pouvait pas simplement accéder à la valeur de l'`<input />` sans utiliser une *ref*.
 
 Mais je peux imposer la valeur de l'input, et faire en sorte que cette valeur soit un `state`.
 
@@ -57,7 +57,7 @@ function FormControlé() {
 
 L'état interne de l'input est alors entièrement géré par React.
 
-Le problème ici est que je ne peux plus modifier mon `<input />`, parce que sa valeur est imposé par React, et ne change jamais. Il faut donc faire évoluer l'état au fur et à mesure que l'on tape dans l'`<input />`, en utilisant un event listener, et en se servant de l'évènement généré.
+Le problème ici est que je ne peux plus modifier mon `<input />`, parce que sa valeur est imposée par React, et ne change jamais. Il faut donc faire évoluer l'état au fur et à mesure que l'on tape dans l'`<input />`, en utilisant un event listener, et en se servant de l'évènement généré.
 
 ```jsx
 function FormControlé() {
@@ -143,8 +143,8 @@ function Form() {
 ## TL;DR
 
 - Les inputs de formulaires ont nativement leur propre état
-- Il est possible d'utiliser des formulaires non controlés, où les inputs gèrent leur état eux-même
-- Il est recommandé d'utiliser des formulaires controlés, où l'état des inputs est entièrement géré par React
+- Il est possible d'utiliser des formulaires non contrôlés, où les inputs gèrent leur état eux-même
+- Il est recommandé d'utiliser des formulaires contrôlés, où l'état des inputs est entièrement géré par React
 - Les évènements générés par React sont un peu différents des classiques
 - Les `<textarea />` et `<select />` peuvent avoir des props `value`
 
