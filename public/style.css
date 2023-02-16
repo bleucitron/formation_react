@@ -1,0 +1,10 @@
+img {
+  width: 10rem;
+}
+
+.Student .favorite {
+  width: 1rem;
+  height: 1rem;
+  background: red;
+  border-radius: 50%;
+}
