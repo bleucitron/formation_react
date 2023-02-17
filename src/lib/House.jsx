@@ -1,14 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Student from './Student';
 
 export default function House(props) {
+  const [points, setPoints] = useState(0);
+  const [open, setOpen] = useState(false);
+
   const logoComp = props.logo ? (
     <img src={props.logo} alt={props.name} />
   ) : null;
 
   return (
-    <div className="House">
-      <h2>{props.name}</h2>
+    <div className="House" onClick={() => setPoints(1000)}>
+      <h2>
+        {props.name} <span>{points}</span>
+      </h2>
       {logoComp}
       <Student
         name="Harry"
