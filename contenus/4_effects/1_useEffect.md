@@ -96,7 +96,7 @@ Réagir au montage d'une instance est en général utilisé pour aller chercher 
 
 1. Aller chercher la donnée des `students` sur le réseau plutôt qu'utilise `import ...`
 ```js
-const url = 'https://hp-api.herokuapp.com/api/characters/students';
+const url = 'https://hp-api.onrender.com/api/characters/students';
 ```
 
 2. Faire en sorte que l'`exp` d'un `<Student />` augmente toutes les secondes au lieu du `mousemove`, en utilisant `setInterval`
